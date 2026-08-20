@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "postinstall": "node scripts/install-deps.js",
-    "prebuild": "node scripts/remove-cdn-for-vercel.js",
     "dev:fast": "cross-env NEXT_TELEMETRY_DISABLED=1 next dev",
     "dev:turbo": "next dev --turbo",
     "build": "cross-env NEXT_TELEMETRY_DISABLED=1 next build",
