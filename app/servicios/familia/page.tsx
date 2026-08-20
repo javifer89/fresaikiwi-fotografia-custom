@@ -45,7 +45,7 @@ export default function FamiliaPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/PAM_FAMILY-40.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvUEFNX0ZBTUlMWS00MC5qcGciLCJpYXQiOjE3NzYwOTg5OTEsImV4cCI6MTgwNzYzNDk5MX0.Y5iE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PAM_FAMILY-40.jpg"
                 alt="Familia 1"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -53,7 +53,7 @@ export default function FamiliaPage() {
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/PAM_FAMILY-40.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvUEFNX0ZBTUlMWS00MC5qcGciLCJpYXQiOjE3NzYwOTg5OTEsImV4cCI6MTgwNzYzNDk5MX0.Y5iE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PAM_FAMILY-40.jpg"
                 alt="Familia 2"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -61,7 +61,7 @@ export default function FamiliaPage() {
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/PAM_FAMILY-40.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvUEFNX0ZBTUlMWS00MC5qcGciLCJpYXQiOjE3NzYwOTg5OTEsImV4cCI6MTgwNzYzNDk5MX0.Y5iE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PAM_FAMILY-40.jpg"
                 alt="Familia 3"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"

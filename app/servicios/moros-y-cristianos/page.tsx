@@ -45,7 +45,7 @@ export default function MorosCristianosPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/ROSA_CAPI-1.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvUk9TQV9DQVBJLTEuanBnIiwiaWF0IjoxNzc2MDk4OTkxLCJleHAiOjE4MDc2MzQ5OTF9.Z5jE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ROSA_CAPI-1.jpg"
                 alt="Moros y Cristianos 1"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -53,7 +53,7 @@ export default function MorosCristianosPage() {
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/ROSA_CAPI-1.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvUk9TQV9DQVBJLTEuanBnIiwiaWF0IjoxNzc2MDk4OTkxLCJleHAiOjE4MDc2MzQ5OTF9.Z5jE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ROSA_CAPI-1.jpg"
                 alt="Moros y Cristianos 2"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -61,7 +61,7 @@ export default function MorosCristianosPage() {
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/ROSA_CAPI-1.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvUk9TQV9DQVBJLTEuanBnIiwiaWF0IjoxNzc2MDk4OTkxLCJleHAiOjE4MDc2MzQ5OTF9.Z5jE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ROSA_CAPI-1.jpg"
                 alt="Moros y Cristianos 3"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"

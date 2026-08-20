@@ -45,7 +45,7 @@ export default function CumpleanosPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/CARLOTA_2ANYS-147.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvQ0FSTE9UQV8yQU5ZUy0xNDcuanBnIiwiaWF0IjoxNzc2MDk4OTkxLCJleHAiOjE4MDc2MzQ5OTF9.X5hE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/CARLOTA_2ANYS-147.jpg"
                 alt="Cumpleaños 1"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -53,7 +53,7 @@ export default function CumpleanosPage() {
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/CARLOTA_2ANYS-147.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvQ0FSTE9UQV8yQU5ZUy0xNDcuanBnIiwiaWF0IjoxNzc2MDk4OTkxLCJleHAiOjE4MDc2MzQ5OTF9.X5hE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/CARLOTA_2ANYS-147.jpg"
                 alt="Cumpleaños 2"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -61,7 +61,7 @@ export default function CumpleanosPage() {
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-xl group">
               <Image
-                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/CARLOTA_2ANYS-147.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvQ0FSTE9UQV8yQU5ZUy0xNDcuanBnIiwiaWF0IjoxNzc2MDk4OTkxLCJleHAiOjE4MDc2MzQ5OTF9.X5hE6F1aJ0mL6hG8Y_z2xAX_BGmGHVuONaSJFHTvsWd4"
+                src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/CARLOTA_2ANYS-147.jpg"
                 alt="Cumpleaños 3"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
