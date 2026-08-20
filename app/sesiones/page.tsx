@@ -41,7 +41,7 @@ const sessions = [
     slug: "comunion",
     description: "Un día especial para siempre. Fotos elegantes que reflejan la importancia del momento.",
     price: "Desde 180€",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/CARLOTA_2ANYS-147.jpg",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EDURNE_EXTERIORS-135.jpg",
     icon: Crown
   },
   {
@@ -65,7 +65,7 @@ const sessions = [
     slug: "musical",
     description: "Pasión y ritmo en imagen. Portfolios profesionales para músicos y artistas.",
     price: "Desde 160€",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EDURNE_EXTERIORS-135.jpg",
+    image: "https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg",
     icon: Music
   },
   {
@@ -96,13 +96,13 @@ export default function SesionesPage() {
             {sessions.map((session) => {
               const IconComponent = session.icon;
               return (
-                <Link 
+                <Link
                   key={session.slug}
                   href={`/sesiones/${session.slug}`}
                   className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
                 >
                   <div className="relative h-48 overflow-hidden">
-                    <Image 
+                    <Image
                       src={session.image}
                       alt={session.name}
                       fill
