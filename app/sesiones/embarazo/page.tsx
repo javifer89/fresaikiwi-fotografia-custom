@@ -1,9 +1,10 @@
 "use client";
 
 import { Container } from "@/components/container";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, X, Loader2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowLeft, X } from "lucide-react";
+import { useState } from "react";
 
 const embarazoImages = [
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/RAQUEL_EMB_PROBA-78 copia.jpg",
@@ -14,20 +15,7 @@ const embarazoImages = [
 
 export default function EmbarazoPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [allLoaded, setAllLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
-
-  useEffect(() => {
-    const loadedImages: boolean[] = new Array(embarazoImages.length).fill(false);
-    let loadedCount = 0;
-    embarazoImages.forEach((src, index) => {
-      const img = new Image();
-      img.onload = () => { loadedImages[index] = true; loadedCount++; if (loadedCount === embarazoImages.length) setAllImagesLoaded(true); };
-      img.onerror = () => { loadedImages[index] = true; loadedCount++; if (loadedCount === embarazoImages.length) setAllImagesLoaded(true); };
-      img.src = src;
-    });
-  }, []);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -94,57 +82,36 @@ export default function EmbarazoPage() {
           
           {/* Galería de fotos en la columna derecha */}
           <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', alignItems: 'start'}}>
-            {!allImagesLoaded ? (
+            {embarazoImages.map((src, index) => (
               <div 
+                key={index}
+                onClick={() => openLightbox(index)}
+                onMouseEnter={(e) => {
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  if (img) img.style.transform = 'scale(1.1)';
+                }}
+                onMouseLeave={(e) => {
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  if (img) img.style.transform = 'scale(1)';
+                }}
                 style={{
-                  aspectRatio: '1/1',
-                  backgroundColor: '#f5f0eb',
+                  position: 'relative',
                   borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gridColumn: '1 / -1'
+                  overflow: 'hidden',
+                  cursor: 'pointer',
+                  aspectRatio: '1/1',
+                  backgroundColor: '#f0f0f0'
                 }}
               >
-                <Loader2 className="w-8 h-8 animate-spin" style={{color: '#D48888'}} />
+                <Image 
+                  src={src} 
+                  alt={`Embarazo ${index + 1}`}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  className="object-cover transition-transform duration-300"
+                />
               </div>
-            ) : (
-              embarazoImages.map((src, index) => (
-                <div 
-                  key={index}
-                  onClick={() => openLightbox(index)}
-                  onMouseEnter={(e) => {
-                    const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                    if (img) img.style.transform = 'scale(1.1)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                    if (img) img.style.transform = 'scale(1)';
-                  }}
-                  style={{
-                    position: 'relative',
-                    borderRadius: '12px',
-                    overflow: 'hidden',
-                    cursor: 'pointer',
-                    aspectRatio: '1/1',
-                    backgroundColor: '#f0f0f0'
-                  }}
-                >
-                  <img 
-                    src={src} 
-                    alt={`Embarazo ${index + 1}`}
-                    loading="lazy"
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.3s ease'
-                    }}
-                  />
-                </div>
-              ))
-            )}
+            ))}
           </div>
         </div>
       </Container>
@@ -162,9 +129,12 @@ export default function EmbarazoPage() {
           >
             <X className="w-8 h-8" />
           </button>
-          <img 
+          <Image 
             src={embarazoImages[selectedImage]} 
             alt="Ampliada"
+            width={1600}
+            height={1600}
+            sizes="90vw"
             className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
             onClick={(e) => e.stopPropagation()}
           />

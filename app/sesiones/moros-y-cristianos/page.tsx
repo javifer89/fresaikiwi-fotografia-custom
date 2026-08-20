@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/container";
 import { Heading, Subheading } from "@/components/heading";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -58,10 +59,12 @@ export default function MorosCristianosPage() {
           </div>
           
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80" 
+            <Image
+              src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80"
               alt="Sesión Moros y Cristianos"
-              className="w-full h-[500px] object-cover"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
             />
             
           </div>

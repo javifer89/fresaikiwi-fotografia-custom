@@ -1,15 +1,16 @@
 "use client";
 
 import { Container } from "@/components/container";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, X } from "lucide-react";
 import { useState } from "react";
 
 const comunionesImages = [
-  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/txdd0wl8fjegett8criy.avif?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvdHhkZDB3bDhmamVnZXR0OGNyaXkuYXZpZiIsImlhdCI6MTc3NzEwMjgxMCwiZXhwIjoxODA4NjM4ODEwfQ.qQnfkWjfly8_FQstLMt_Q4qIdHCyvHkHPh47gC5cg60",
-  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/FINALS_MARC_COMU-126%20copia.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvRklOQUxTX01BUkNfQ09NVS0xMjYgY29waWEuanBnIiwiaWF0IjoxNzc3MTAyOTQwLCJleHAiOjE4MDg2Mzg5NDB9.NBfz4qh6goY6r0mlbn9KtBaGBxkhUnS0RKryTdkI8XQ",
-  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/SYRA_EXTERIORS-69%20copia.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvU1lSQV9FWFRFUklPUlMtNjkgY29waWEuanBnIiwiaWF0IjoxNzc3MTAyODM3LCJleHAiOjE4MDg2Mzg4Mzd9.GVBWGeh6VyS8jR_bw1E5p52ExREIobEPV7x9vT0JeEs",
-  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/SYRA_EXTERIORS-110.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvU1lSQV9FWFRFUklPUlMtMTEwLmpwZyIsImlhdCI6MTc3NzEwMjkwOSwiZXhwIjoxODA4NjM4OTA5fQ.s3Vv18MvHX1Kf0JOEt-FeH-dPjAR6fKrPGqlID5BXaA"
+  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/txdd0wl8fjegett8criy.avif",
+  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/FINALS_MARC_COMU-126 copia.jpg",
+  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/SYRA_EXTERIORS-69 copia.jpg",
+  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/SYRA_EXTERIORS-110.jpg"
 ];
 
 export default function ComunionesPage() {
@@ -88,18 +89,13 @@ export default function ComunionesPage() {
                   backgroundColor: '#f0f0f0'
                 }}
               >
-                <img 
+                <Image 
                   src={src} 
                   alt={`Comunión ${index + 1}`}
-                  loading="lazy"
-                  style={{
-                    display: 'block',
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.3s ease'
-                  }}
-                  className="hover:scale-110"
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  className="object-cover transition-transform duration-300 hover:scale-110"
+                  unoptimized={src.includes('.avif')}
                 />
               </div>
             ))}
@@ -120,10 +116,14 @@ export default function ComunionesPage() {
           >
             <X className="w-8 h-8" />
           </button>
-          <img 
+          <Image 
             src={comunionesImages[selectedImage]} 
             alt="Ampliada"
+            width={1600}
+            height={1600}
+            sizes="90vw"
             className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+            unoptimized={comunionesImages[selectedImage].includes('.avif')}
             onClick={(e) => e.stopPropagation()}
           />
         </div>

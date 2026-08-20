@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -59,10 +60,12 @@ export default function MusicalPage() {
           </div>
           
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg" 
+            <Image
+              src="https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg"
               alt="Sesión Musical"
-              className="w-full h-[500px] object-cover"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
             />
             
           </div>

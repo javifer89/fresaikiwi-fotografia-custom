@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Container } from "@/components/container";
 import { Footer } from "@/components/footer";
 import { Heart, Camera, Sparkles } from "lucide-react";
@@ -37,10 +38,12 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/sign/assets/IMG_9035-copia-bin-800x1024.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV85ODI1NjIyOS0wNDlhLTRkMTgtYTIxNi0wNmIwOTkwODZiMjgiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJhc3NldHMvSU1HXzkwMzUtY29waWEtYmluLTgwMHgxMDI0LmpwZyIsImlhdCI6MTc3NjA5ODk5MSwiZXhwIjoxODA3NjM0OTkxfQ.u6XBdTz7AujG0s1Z-z2xAX_BGmGHVuONaSJFHTvsWd4" 
+                <Image
+                  src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/IMG_9035-copia-bin-800x1024.jpg"
                   alt="Estudio Fresaikiwi"
-                  className="w-full h-[500px] md:h-[600px] object-cover"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
                 />
               </div>
             </div>

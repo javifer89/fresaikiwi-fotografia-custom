@@ -1,9 +1,10 @@
 "use client";
 
 import { Container } from "@/components/container";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, X, Loader2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowLeft, X } from "lucide-react";
+import { useState } from "react";
 
 const newbornImages = [
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EIRE-35-copia.avif",
@@ -14,33 +15,7 @@ const newbornImages = [
 
 export default function NewbornPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [allLoaded, setAllLoaded] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
-  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
-
-  useEffect(() => {
-    const loadedImages: boolean[] = new Array(newbornImages.length).fill(false);
-    let loadedCount = 0;
-
-    newbornImages.forEach((src, index) => {
-      const img = new Image();
-      img.onload = () => {
-        loadedImages[index] = true;
-        loadedCount++;
-        if (loadedCount === newbornImages.length) {
-          setAllImagesLoaded(true);
-        }
-      };
-      img.onerror = () => {
-        loadedImages[index] = true;
-        loadedCount++;
-        if (loadedCount === newbornImages.length) {
-          setAllImagesLoaded(true);
-        }
-      };
-      img.src = src;
-    });
-  }, []);
 
   const openLightbox = (index: number) => {
     setSelectedImage(index);
@@ -101,22 +76,7 @@ export default function NewbornPage() {
           
           {/* Galería de fotos en la columna derecha */}
           <div style={{display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', alignItems: 'start'}}>
-            {!allImagesLoaded ? (
-              <div 
-                style={{
-                  aspectRatio: '1/1',
-                  backgroundColor: '#f5f0eb',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  gridColumn: '1 / -1'
-                }}
-              >
-                <Loader2 className="w-8 h-8 animate-spin" style={{color: '#D48888'}} />
-              </div>
-            ) : (
-              newbornImages.map((src, index) => (
+            {newbornImages.map((src, index) => (
                 <div 
                   key={index}
                   onClick={() => openLightbox(index)}
@@ -137,21 +97,16 @@ export default function NewbornPage() {
                     backgroundColor: '#f0f0f0'
                   }}
                 >
-                  <img 
+                  <Image 
                     src={src} 
                     alt={`Newborn ${index + 1}`}
-                    loading="lazy"
-                    style={{
-                      display: 'block',
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.3s ease'
-                    }}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, 50vw"
+                    className="object-cover transition-transform duration-300"
+                    unoptimized={src.includes('.avif')}
                   />
                 </div>
-              ))
-            )}
+              ))}
           </div>
         </div>
       </Container>
@@ -169,10 +124,14 @@ export default function NewbornPage() {
           >
             <X className="w-8 h-8" />
           </button>
-          <img 
+          <Image 
             src={newbornImages[selectedImage]} 
             alt="Ampliada"
+            width={1600}
+            height={1600}
+            sizes="90vw"
             className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+            unoptimized={newbornImages[selectedImage].includes('.avif')}
             onClick={(e) => e.stopPropagation()}
           />
         </div>

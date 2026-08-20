@@ -2,6 +2,7 @@
 
 import { Container } from "@/components/container";
 import { Heading, Subheading } from "@/components/heading";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 
@@ -56,10 +57,12 @@ export default function FamiliaPage() {
           </div>
           
           <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80" 
+            <Image
+              src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80"
               alt="Sesión Familia"
-              className="w-full h-[500px] object-cover"
+              fill
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="object-cover"
             />
             
           </div>

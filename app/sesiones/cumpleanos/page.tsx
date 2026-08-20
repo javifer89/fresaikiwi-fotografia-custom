@@ -1,9 +1,10 @@
 "use client";
 
 import { Container } from "@/components/container";
+import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, X, Loader2 } from "lucide-react";
-import { useState, useEffect } from "react";
+import { ArrowLeft, X } from "lucide-react";
+import { useState } from "react";
 
 const galleryImages = [
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ALEJANDRO_SMASH-240.jpg",
@@ -14,27 +15,12 @@ const galleryImages = [
 
 export default function CumpleanosPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [allLoaded, setAllLoaded] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
 
   const openLightbox = (index: number) => {
     setCurrentImage(index);
     setLightboxOpen(true);
   };
-
-  useEffect(() => {
-    let loadedCount = 0;
-    galleryImages.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        loadedCount++;
-        if (loadedCount === galleryImages.length) {
-          setAllLoaded(true);
-        }
-      };
-    });
-  }, []);
 
   return (
     <main className="min-h-screen" style={{ backgroundColor: '#FDF8F4' }}>
@@ -148,20 +134,6 @@ export default function CumpleanosPage() {
             gridTemplateColumns: 'repeat(2, 1fr)',
             gap: '12px',
           }}>
-            {!allLoaded && (
-              <div style={{
-                gridColumn: '1 / -1',
-                gridRow: '1 / -1',
-                aspectRatio: '1/1',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                backgroundColor: '#f5f0eb',
-                borderRadius: '12px',
-              }}>
-                <Loader2 className="w-8 h-8 animate-spin" style={{color: '#D48888'}} />
-              </div>
-            )}
             {galleryImages.map((src, index) => (
               <div
                 key={index}
@@ -174,16 +146,12 @@ export default function CumpleanosPage() {
                   boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                 }}
               >
-                <img
+                <Image
                   src={src}
                   alt={`Cumpleaños ${index + 1}`}
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block',
-                    transition: 'transform 0.3s ease',
-                  }}
+                  fill
+                  sizes="(min-width: 1024px) 25vw, 50vw"
+                  className="object-cover transition-transform duration-300"
                   onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
                   onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
                 />
@@ -210,9 +178,12 @@ export default function CumpleanosPage() {
             cursor: 'pointer',
           }}
         >
-          <img
+          <Image
             src={galleryImages[currentImage]}
             alt="Lightbox"
+            width={1600}
+            height={1600}
+            sizes="90vw"
             style={{
               maxWidth: '90vw',
               maxHeight: '90vh',
