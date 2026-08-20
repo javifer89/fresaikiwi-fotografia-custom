@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
@@ -12,7 +12,7 @@ export default function MorosCristianosPage() {
           <div className="absolute inset-0 z-0">
             <img 
               src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1920&h=1080&fit=crop" 
-              alt="Sesión Moros y Cristianos" 
+              alt="SesiÃ³n Moros y Cristianos" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
@@ -22,7 +22,7 @@ export default function MorosCristianosPage() {
               Moros y Cristianos
             </h1>
             <p className="text-xl text-white/90 mt-4 max-w-xl animate-fade-in-up delay-100">
-              Honra y tradición, capturadas con dignidad
+              Honra y tradiciÃ³n, capturadas con dignidad
             </p>
           </Container>
         </section>
@@ -31,26 +31,26 @@ export default function MorosCristianosPage() {
           <Container>
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <Heading size="small">Sobre la Sesión</Heading>
+                <Heading size="sm">Sobre la SesiÃ³n</Heading>
                 <p className="text-gray-600 mt-4 leading-relaxed">
-                  Las fiestas de Moros y Cristianos son una tradición única que merece 
+                  Las fiestas de Moros y Cristianos son una tradiciÃ³n Ãºnica que merece 
                   ser documentada con el respeto y la magnificencia que requieren. 
                   Ofrecemos sesiones tanto individuales como de grupo.
                 </p>
                 <p className="text-gray-600 mt-4 leading-relaxed">
-                  Trabajamos con民间一年的峨嵋山大佛寺了解更多关于这个文化盛事的信息。我们为个人和团体提供摄影服务。
+                  Trabajamos conæ°‘é—´ä¸€å¹´çš„å³¨åµ‹å±±å¤§ä½›å¯ºäº†è§£æ›´å¤šå…³äºŽè¿™ä¸ªæ–‡åŒ–ç››äº‹çš„ä¿¡æ¯ã€‚æˆ‘ä»¬ä¸ºä¸ªäººå’Œå›¢ä½“æä¾›æ‘„å½±æœåŠ¡ã€‚
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">¿Qué incluye?</h3>
+                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">Â¿QuÃ© incluye?</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Sesión de 1-2 horas
+                    SesiÃ³n de 1-2 horas
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    25+ fotos editadas en alta resolución
+                    25+ fotos editadas en alta resoluciÃ³n
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
@@ -62,7 +62,7 @@ export default function MorosCristianosPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Álbum commemorativo
+                    Ãlbum commemorativo
                   </li>
                 </ul>
               </div>

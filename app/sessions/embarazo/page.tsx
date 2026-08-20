@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
@@ -12,17 +12,17 @@ export default function EmbarazoPage() {
           <div className="absolute inset-0 z-0">
             <img 
               src="https://images.unsplash.com/photo-1544126592-807ade215a0b?w=1920&h=1080&fit=crop" 
-              alt="Sesión Embarazo" 
+              alt="SesiÃ³n Embarazo" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
           </div>
           <Container className="relative z-10">
             <h1 className="text-5xl md:text-6xl font-bold text-white animate-fade-in-up">
-              Sesión Embarazo
+              SesiÃ³n Embarazo
             </h1>
             <p className="text-xl text-white/90 mt-4 max-w-xl animate-fade-in-up delay-100">
-              Capturamos la belleza y emoción de esta etapa única
+              Capturamos la belleza y emociÃ³n de esta etapa Ãºnica
             </p>
           </Container>
         </section>
@@ -31,28 +31,28 @@ export default function EmbarazoPage() {
           <Container>
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <Heading size="small">Sobre la Sesión</Heading>
+                <Heading size="sm">Sobre la SesiÃ³n</Heading>
                 <p className="text-gray-600 mt-4 leading-relaxed">
                   Las sesiones de embarazo son una forma hermosa de celebrar y recordar 
                   esta etapa tan especial. Trabajamos con luz natural para conseguir 
-                  imágenes suaves, elegantes y llenas de emoción.
+                  imÃ¡genes suaves, elegantes y llenas de emociÃ³n.
                 </p>
                 <p className="text-gray-600 mt-4 leading-relaxed">
                   Ofrecemos diferentes paquetes adaptados a tus necesidades, desde 
-                  sesiones íntimas en estudio hasta sesiones al aire libre con diferentes 
+                  sesiones Ã­ntimas en estudio hasta sesiones al aire libre con diferentes 
                   vestuarios y setups.
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">¿Qué incluye?</h3>
+                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">Â¿QuÃ© incluye?</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Duración de 1-2 horas
+                    DuraciÃ³n de 1-2 horas
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    15-20 fotos editadas en alta resolución
+                    15-20 fotos editadas en alta resoluciÃ³n
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
@@ -60,11 +60,11 @@ export default function EmbarazoPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Ubicación a elegir (estudio o exterior)
+                    UbicaciÃ³n a elegir (estudio o exterior)
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Galería privada online
+                    GalerÃ­a privada online
                   </li>
                 </ul>
               </div>

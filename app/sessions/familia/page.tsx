@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
@@ -12,14 +12,14 @@ export default function FamiliaPage() {
           <div className="absolute inset-0 z-0">
             <img 
               src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=1920&h=1080&fit=crop" 
-              alt="Sesión Familia" 
+              alt="SesiÃ³n Familia" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
           </div>
           <Container className="relative z-10">
             <h1 className="text-5xl md:text-6xl font-bold text-white animate-fade-in-up">
-              Sesión Familia
+              SesiÃ³n Familia
             </h1>
             <p className="text-xl text-white/90 mt-4 max-w-xl animate-fade-in-up delay-100">
               El amor familiar, capturado para siempre
@@ -31,31 +31,31 @@ export default function FamiliaPage() {
           <Container>
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <Heading size="small">Sobre la Sesión</Heading>
+                <Heading size="sm">Sobre la SesiÃ³n</Heading>
                 <p className="text-gray-600 mt-4 leading-relaxed">
                   Las sesiones familiares son una forma maravillosa de documentar 
-                  la conexión y el amor entre los miembros de tu familia. 
-                  Nos encanta capturar momentos auténticos y naturales.
+                  la conexiÃ³n y el amor entre los miembros de tu familia. 
+                  Nos encanta capturar momentos autÃ©nticos y naturales.
                 </p>
                 <p className="text-gray-600 mt-4 leading-relaxed">
-                  Trabajamos con luz natural y nos adaptamos a la dinámica de cada 
-                  familia para conseguir imágenes que reflejen su esencia única.
+                  Trabajamos con luz natural y nos adaptamos a la dinÃ¡mica de cada 
+                  familia para conseguir imÃ¡genes que reflejen su esencia Ãºnica.
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">¿Qué incluye?</h3>
+                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">Â¿QuÃ© incluye?</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Duración de 1-1.5 horas
+                    DuraciÃ³n de 1-1.5 horas
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    25+ fotos editadas en alta resolución
+                    25+ fotos editadas en alta resoluciÃ³n
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Ubicación a elegir
+                    UbicaciÃ³n a elegir
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
@@ -63,7 +63,7 @@ export default function FamiliaPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Galería privada online
+                    GalerÃ­a privada online
                   </li>
                 </ul>
               </div>

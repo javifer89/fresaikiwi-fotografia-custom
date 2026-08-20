@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Container } from "@/components/container";
 import { Heading } from "@/components/heading";
@@ -12,17 +12,17 @@ export default function MusicalPage() {
           <div className="absolute inset-0 z-0">
             <img 
               src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1920&h=1080&fit=crop" 
-              alt="Sesión Musical" 
+              alt="SesiÃ³n Musical" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/30" />
           </div>
           <Container className="relative z-10">
             <h1 className="text-5xl md:text-6xl font-bold text-white animate-fade-in-up">
-              Sesión Musical
+              SesiÃ³n Musical
             </h1>
             <p className="text-xl text-white/90 mt-4 max-w-xl animate-fade-in-up delay-100">
-              Para músicos, bandas y amantes de la música
+              Para mÃºsicos, bandas y amantes de la mÃºsica
             </p>
           </Container>
         </section>
@@ -31,32 +31,32 @@ export default function MusicalPage() {
           <Container>
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
               <div>
-                <Heading size="small">Sobre la Sesión</Heading>
+                <Heading size="sm">Sobre la SesiÃ³n</Heading>
                 <p className="text-gray-600 mt-4 leading-relaxed">
-                  Las sesiones musicales están diseñadas para músicos, cantantes y 
-                  bandas que quieren capturar su esencia artística. Ya sea para promo, 
-                  portada de álbum o simplemente por pasión.
+                  Las sesiones musicales estÃ¡n diseÃ±adas para mÃºsicos, cantantes y 
+                  bandas que quieren capturar su esencia artÃ­stica. Ya sea para promo, 
+                  portada de Ã¡lbum o simplemente por pasiÃ³n.
                 </p>
                 <p className="text-gray-600 mt-4 leading-relaxed">
                   Trabajamos con diferentes estilos: desde sesiones intimistas con 
-                  instrumentos acústicos hasta producciones más elaboradas con iluminación 
-                  dramática y sets personalizados.
+                  instrumentos acÃºsticos hasta producciones mÃ¡s elaboradas con iluminaciÃ³n 
+                  dramÃ¡tica y sets personalizados.
                 </p>
               </div>
               <div className="bg-white rounded-2xl shadow-xl p-8">
-                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">¿Qué incluye?</h3>
+                <h3 className="text-xl font-semibold text-[var(--brand-dark)] mb-4">Â¿QuÃ© incluye?</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Duración de 1-2 horas
+                    DuraciÃ³n de 1-2 horas
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    30+ fotos editadas en alta resolución
+                    30+ fotos editadas en alta resoluciÃ³n
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
-                    Diferentes setups e iluminación
+                    Diferentes setups e iluminaciÃ³n
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="w-2 h-2 bg-[var(--accent)] rounded-full" />
