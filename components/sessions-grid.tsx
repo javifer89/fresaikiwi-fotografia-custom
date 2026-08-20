@@ -18,14 +18,14 @@ const sessions = [
     name: "Embarazo",
     slug: "embarazo",
     description: "Captura la esencia de la espera",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/MARC-41 copia.jpg",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LAURA-1 copia.jpg",
     icon: Heart
   },
   {
     name: "Newborn",
     slug: "newborn",
     description: "Los primeros días, un tesoro",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LAURA-1 copia.jpg",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/MARC-41 copia.jpg",
     icon: Star
   },
   {
@@ -60,7 +60,7 @@ const sessions = [
     name: "Musical",
     slug: "musical",
     description: "Pasión y ritmo en imagen",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/MARC-41 copia.jpg",
+    image: "https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg",
     icon: Camera
   },
   {
@@ -82,7 +82,7 @@ export function SessionsGrid() {
                 style={{ backgroundColor: FRESA_LIGHT, color: FRESA_DARK }}>
             Nuestras Sesiones
           </span>
-          <h2 
+          <h2
             className="text-4xl md:text-5xl font-bold mb-4"
             style={{ fontFamily: "'Cormorant Garamond', serif", color: GRIS }}
           >
@@ -98,7 +98,7 @@ export function SessionsGrid() {
           {sessions.map((session, index) => {
             const Icon = session.icon;
             const isLarge = index === 0 || index === 3;
-            
+
             return (
               <Link
                 key={session.slug}
@@ -116,16 +116,16 @@ export function SessionsGrid() {
                     sizes="(min-width: 768px) 25vw, 50vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  
+
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                  
+
                   {/* Content */}
                   <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6">
                     <div className="mb-2">
                       <Icon className="w-5 h-5 md:w-6 md:h-6 text-white/80" />
                     </div>
-                    <h3 
+                    <h3
                       className={`font-bold text-white mb-1 ${isLarge ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl'}`}
                       style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.4)' }}
                     >
@@ -134,7 +134,7 @@ export function SessionsGrid() {
                     <p className={`text-white/80 ${isLarge ? 'text-base md:text-lg' : 'text-sm'}`}>
                       {session.description}
                     </p>
-                    
+
                     {/* Hover Arrow */}
                     <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity">
                       <span className="inline-flex items-center gap-2 text-sm font-medium text-white">
