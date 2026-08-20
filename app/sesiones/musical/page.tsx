@@ -59,7 +59,7 @@ export default function MusicalPage() {
             </Link>
           </div>
           
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px]">
             <Image
               src="https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg"
               alt="Sesión Musical"

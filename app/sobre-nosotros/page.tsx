@@ -37,7 +37,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="relative">
-              <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[500px] md:h-[600px]">
                 <Image
                   src="https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/IMG_9035-copia-bin-800x1024.jpg"
                   alt="Estudio Fresaikiwi"

@@ -56,7 +56,7 @@ export default function FamiliaPage() {
             </Link>
           </div>
           
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[500px]">
             <Image
               src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80"
               alt="Sesión Familia"
