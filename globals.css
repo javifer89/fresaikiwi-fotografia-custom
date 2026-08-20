@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Fresaikiwi Palette - Natural & Warm */
+  --fresa: #E8A4A4;
+  --fresa-light: #F5C6C6;
+  --fresa-dark: #D48484;
+  --kiwi: #7BAE7F;
+  --kiwi-light: #A8D4A9;
+  --kiwi-dark: #5C9460;
+  --crema: #FDF8F4;
+  --crema-dark: #F5EDE5;
+  --terracotta: #C9896F;
+  
+  /* Semantic */
+  --brand: var(--fresa);
+  --brand-light: var(--fresa-light);
+  --brand-dark: var(--fresa-dark);
+  --accent: var(--kiwi);
+  --accent-light: var(--kiwi-light);
+  --accent-dark: var(--kiwi-dark);
+  --surface: var(--crema);
+  --surface-dark: var(--crema-dark);
+}
+
+@layer base {
+  body {
+    @apply antialiased;
+    background-color: var(--crema);
+    color: #3D3D3D;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    @apply tracking-tight;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--crema);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fresa-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--fresa);
+}
+
+/* Animation classes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.3s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Hero gradient overlay */
+.hero-gradient {
+  background: linear-gradient(
+    135deg,
+    rgba(232, 164, 164, 0.3) 0%,
+    rgba(123, 174, 127, 0.2) 50%,
+    rgba(253, 248, 244, 0.8) 100%
+  );
+}
+
+/* Card hover effects */
+.session-card {
+  @apply transition-all duration-300;
+}
+
+.session-card:hover {
+  @apply -translate-y-2;
+}
+
+.session-card:hover .session-overlay {
+  @apply opacity-100;
+}
+
+/* Dropdown animation */
+.dropdown-enter {
+  animation: slideDown 0.2s ease-out forwards;
+}
