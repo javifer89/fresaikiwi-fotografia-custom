@@ -1,4 +1,6 @@
-// PostCSS config - minimal for Tailwind CDN approach
+// PostCSS config - Tailwind CSS v4 compiled (no CDN)
 export default {
-  plugins: {},
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
 };

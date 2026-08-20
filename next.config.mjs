@@ -30,7 +30,6 @@ const nextConfig = {
 
   // Image optimization
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -107,88 +106,22 @@ const nextConfig = {
       "@context": path.resolve("./context"),
     };
 
-    // Webpack configuration for aliases
-    // Only in dev mode
-    if (dev) {
-      // Development mode: no additional loaders needed
-    }
-
-    // 🔥 NUCLEAR OPTION: Replace tailwind-cdn-loader with empty module in production
-    // This BLOCKS the file at webpack level - it CANNOT be imported!
-    // Detect Vercel OR production build in multiple ways to be 100% sure
-    const isVercel =
-      process.env.VERCEL === "1" ||
-      process.env.VERCEL === "true" ||
-      process.env.NEXT_PUBLIC_VERCEL === "1" ||
-      process.env.VERCEL_ENV !== undefined ||
-      process.env.VERCEL_URL !== undefined;
-
-    const isProduction = process.env.NODE_ENV === "production";
-
-    // Block CDN on Vercel OR in any production build
-    if (isVercel || isProduction) {
-      config.plugins.push(
-        new webpack.NormalModuleReplacementPlugin(
-          /tailwind-cdn-loader/,
-          path.resolve("./components/empty-loader.tsx"),
-        ),
-      );
-      console.log(
-        "🚫 [WEBPACK] Blocking tailwind-cdn-loader.tsx - replaced with empty-loader.tsx",
-      );
-      if (isVercel) {
-        console.log("🚀 [WEBPACK] Vercel detected - CDN will NOT be used");
-      }
-      if (isProduction) {
-        console.log("🚀 [WEBPACK] Production build - CDN will NOT be used");
-      }
-    } else {
-      console.log(
-        "🎨 [WEBPACK] Development mode - tailwind-cdn-loader will be active",
-      );
-    }
+    void dev;
+    void webpack;
 
     return config;
   },
 
-  // Headers for CodeSandbox iframe compatibility
-  // Note: NO CORS headers needed - health checks use server-side SDK
+  // Headers
   async headers() {
     return [
-      // Caching + iframe headers for all routes
+      // Allow iframe embedding (CodeSandbox preview)
       {
         source: "/:path*",
         headers: [
-          // Allow iframe embedding
           {
             key: "X-Frame-Options",
             value: "ALLOWALL",
-          },
-          // No cache for development (see AI changes immediately)
-          {
-            key: "Cache-Control",
-            value: "no-store, no-cache, must-revalidate, proxy-revalidate",
-          },
-          {
-            key: "Pragma",
-            value: "no-cache",
-          },
-          {
-            key: "Expires",
-            value: "0",
-          }],
-      },
-      // Cache headers for static assets (JS, CSS, images)
-      // In CodeSandbox dev: NO cache to see AI changes immediately
-      // On Vercel production: Next.js handles caching with content hashes
-      {
-        source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            // no-cache = browser must revalidate before using cached version
-            // This ensures fresh CSS/JS after AI edits while still allowing conditional caching
-            value: "no-cache, no-store, must-revalidate",
           }],
       }];
   },

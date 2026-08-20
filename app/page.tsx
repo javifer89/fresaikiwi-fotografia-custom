@@ -1,7 +1,5 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
 import { HeroCarousel } from "@/components/hero-carousel";
 import { SessionsGrid } from "@/components/sessions-grid";
 import { ContactCTA } from "@/components/contact-cta";
