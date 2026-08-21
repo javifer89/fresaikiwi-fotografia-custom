@@ -1,0 +1,27 @@
+{
+  "name": "Fresaikiwi Fotografía",
+  "short_name": "Fresaikiwi",
+  "description": "Fotografía profesional en La Vila Joiosa, Alicante. Sesiones de embarazo, newborn, cumpleaños, comuniones, familia y más.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FDF8F4",
+  "theme_color": "#E8A4A4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["photography", "lifestyle"],
+  "lang": "es",
+  "dir": "ltr"
+}

@@ -5,6 +5,8 @@ import { NavBar } from "@/components/navbar";
 import { DevToolsGuard } from "./devtools-guard";
 import { siteConfig } from "@/lib/site-config";
 
+const LOGO_URL = "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
+
 export const metadata: Metadata = {
   title: {
     default: `${siteConfig.name} - ${siteConfig.tagline}`,
@@ -62,6 +64,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  icons: {
+    icon: LOGO_URL,
+    shortcut: LOGO_URL,
+    apple: LOGO_URL,
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
