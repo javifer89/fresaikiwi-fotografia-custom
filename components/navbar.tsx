@@ -32,8 +32,8 @@ export function NavBar() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-1"
-      style={{ backgroundColor: 'rgba(253, 253, 253, 0.95)', backdropFilter: 'blur(10px)' }}
+      className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8"
+      style={{ backgroundColor: 'rgba(253, 248, 244, 0.92)', backdropFilter: 'blur(12px)' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
@@ -45,7 +45,7 @@ export function NavBar() {
               width={160}
               height={80}
               priority
-              className="h-16 md:h-20 w-auto"
+              className="h-20 md:h-24 w-auto -mt-1 -mb-1"
             />
           </Link>
 

@@ -17,12 +17,12 @@ export default function AboutPage() {
                 Conoce la historia detrás de Fresaikiwi Fotografía
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=600&h=800&fit=crop" 
-                  alt="Estudio de fotografía" 
+                <img
+                  src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?w=600&h=800&fit=crop"
+                  alt="Estudio de fotografía"
                   className="rounded-2xl shadow-xl w-full"
                 />
               </div>
@@ -31,20 +31,20 @@ export default function AboutPage() {
                   Nuestra Historia
                 </h3>
                 <p className="text-gray-600 leading-relaxed" style={{fontFamily: "'Roboto', sans-serif"}}>
-                  Fresaikiwi Fotografía nació de la pasión por capturar momentos únicos y 
-                  emociones genuinas. Cada sesión es una oportunidad para crear recuerdos 
+                  Fresaikiwi Fotografía nació de la pasión por capturar momentos únicos y
+                  emociones genuinas. Cada sesión es una oportunidad para crear recuerdos
                   que durarán toda la vida.
                 </p>
                 <p className="text-gray-600 leading-relaxed" style={{fontFamily: "'Roboto', sans-serif"}}>
-                  Con años de experiencia en fotografía de familias, bebés y eventos especiales, 
-                  nos especializamos en crear imágenes que cuentan historias y transmiten 
+                  Con años de experiencia en fotografía de familias, bebés y eventos especiales,
+                  nos especializamos en crear imágenes que cuentan historias y transmiten
                   la esencia de cada familia.
                 </p>
                 <h3 className="text-2xl font-semibold pt-4" style={{color: '#D48888'}}>
                   Nuestro Estilo
                 </h3>
                 <p className="text-gray-600 leading-relaxed" style={{fontFamily: "'Roboto', sans-serif"}}>
-                  Apostamos por un estilo natural y espontáneo, donde la luz natural y 
+                  Apostamos por un estilo natural y espontáneo, donde la luz natural y
                   los gestos auténticos son nuestros grandes aliados.
                 </p>
               </div>
