@@ -99,7 +99,6 @@ export default function ContactoPage() {
                 Envíanos un mensaje
               </h3>
               <FormspreeForm
-                formId="xeajnkrr"
                 fields={[
                   { name: "nombre", label: "Nombre", type: "text", required: true },
                   { name: "email", label: "Email", type: "email", required: true },

@@ -35,7 +35,6 @@ export function ContactCTA() {
           {/* Contact Form */}
           <div className="bg-white rounded-3xl p-8 shadow-xl">
             <FormspreeForm
-              formId="xeajnkrr"
               fields={[
                 { name: "nombre", label: "Nombre completo", type: "text", required: true },
                 { name: "email", label: "Email", type: "email", required: true },

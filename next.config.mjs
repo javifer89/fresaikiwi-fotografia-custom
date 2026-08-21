@@ -115,15 +115,32 @@ const nextConfig = {
   // Headers
   async headers() {
     return [
-      // Allow iframe embedding (CodeSandbox preview)
       {
         source: "/:path*",
         headers: [
+          { key: "X-Frame-Options", value: "ALLOWALL" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-XSS-Protection", value: "1; mode=block" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           {
-            key: "X-Frame-Options",
-            value: "ALLOWALL",
-          }],
-      }];
+            key: "Content-Security-Policy",
+            value: [
+              "default-src 'self'",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com",
+              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
+              "font-src 'self' https://fonts.gstatic.com",
+              "img-src 'self' data: https: blob:",
+              "connect-src 'self' https://formspree.io https://rxdpvfeqdbenrlupzewy.supabase.co",
+              "frame-src https://www.google.com",
+              "frame-ancestors 'none'",
+              "base-uri 'self'",
+              "form-action 'self' https://formspree.io"
+            ].join("; "),
+          },
+        ],
+      },
+    ];
   },
 };
 

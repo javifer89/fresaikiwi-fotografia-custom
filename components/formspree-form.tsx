@@ -24,7 +24,6 @@ interface FormField {
 }
 
 interface FormspreeFormProps {
-  formId: string;
   title?: string;
   description?: string;
   fields: FormField[];
@@ -34,12 +33,11 @@ interface FormspreeFormProps {
 }
 
 export function FormspreeForm({
-  formId,
   title,
   description,
   fields,
-  submitText = "Submit",
-  successMessage = "Thank you! Your submission has been received.",
+  submitText = "Enviar",
+  successMessage = "¡Gracias! Tu mensaje ha sido enviado correctamente.",
   className = "",
 }: FormspreeFormProps) {
   const [submitted, setSubmitted] = useState(false);
@@ -51,18 +49,22 @@ export function FormspreeForm({
     setIsLoading(true);
 
     try {
-      const response = await fetch(`https://formspree.io/f/${formId}`, {
+      const payload = { ...formData, _gotcha: "" };
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       if (response.ok) {
         setSubmitted(true);
         setFormData({});
         setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        const error = await response.json();
+        console.error("Form submission error:", error);
       }
     } catch (error) {
       console.error("Form submission error:", error);
