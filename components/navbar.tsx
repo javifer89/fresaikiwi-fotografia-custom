@@ -30,6 +30,9 @@ export function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [sessionsDropdownOpen, setSessionsDropdownOpen] = useState(false);
 
+  const whatsappUrl = (message?: string) =>
+    `https://wa.me/34633520862?${message ? `text=${encodeURIComponent(message)}` : ""}`;
+
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8"
@@ -88,7 +91,7 @@ export function NavBar() {
                     </Link>
                   ))}
                 </div>
-              )}
+              )} 
             </div>
 
             <Link
@@ -98,6 +101,16 @@ export function NavBar() {
             >
               Reservas
             </Link>
+
+            <a
+              href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
+              className="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105"
+              style={{ backgroundColor: '#25D366', color: 'white', boxShadow: '0 2px 5px rgba(37, 211, 102, 0.3)' }}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>
 
             <Link
               href="/contacto"
@@ -158,6 +171,16 @@ export function NavBar() {
               >
                 Reservas
               </Link>
+
+              <a
+                href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
+                className="py-2 px-4 rounded-lg text-sm font-medium text-center"
+                style={{ backgroundColor: '#25D366', color: 'white' }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
 
               <Link
                 href="/contacto"

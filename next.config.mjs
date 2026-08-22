@@ -132,7 +132,7 @@ const nextConfig = {
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: blob:",
               "connect-src 'self' https://formspree.io https://rxdpvfeqdbenrlupzewy.supabase.co",
-              "frame-src https://www.google.com",
+              "frame-src https://www.google.com https://ohmyphoto.app",
               "frame-ancestors 'none'",
               "base-uri 'self'",
               "form-action 'self' https://formspree.io"

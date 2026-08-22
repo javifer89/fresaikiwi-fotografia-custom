@@ -10,16 +10,20 @@ const galleryImages = [
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ALEJANDRO_SMASH-240.jpg",
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EMMA_2-82.jpg",
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/TRISTAN-209.jpg",
-  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EMMA 1 copia.jpg",
+  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EMMA%201%20copia.jpg",
 ];
 
 export default function CumpleanosPage() {
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(0);
 
   const openLightbox = (index: number) => {
-    setCurrentImage(index);
+    setSelectedImage(index);
     setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
   };
 
   return (
@@ -27,123 +31,79 @@ export default function CumpleanosPage() {
       <Container>
         <Link
           href="/sesiones"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '8px',
-            color: '#D48888',
-            transition: 'color 0.2s',
-            fontFamily: "'Roboto', sans-serif",
-            marginBottom: '32px',
-          }}
-          onMouseEnter={(e) => e.currentTarget.style.color = '#E8A4A4'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#D48888'}
+          className="inline-flex items-center gap-2 mb-8 transition-colors"
+          style={{ color: '#D48888' }}
         >
           <ArrowLeft className="w-4 h-4" />
-          Volver a Sesiones
+          <span style={{ fontFamily: "'Roboto', sans-serif" }}>Volver a Sesiones</span>
         </Link>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '48px', alignItems: 'start' }}>
+        <div className="grid lg:grid-cols-2 gap-12 lg:items-start mb-16">
           <div>
-            <span style={{
-              display: 'inline-block',
-              padding: '4px 16px',
-              backgroundColor: 'rgba(232, 164, 164, 0.2)',
-              color: '#D48888',
-              borderRadius: '9999px',
-              fontSize: '14px',
-              fontFamily: "'Roboto', sans-serif",
-            }}>
+            <span className="inline-block px-4 py-1 rounded-full text-sm mb-4" style={{ backgroundColor: 'rgba(232,164,164,0.2)', color: '#D48888' }}>
               Celebración
             </span>
-            <h1 style={{
-              fontSize: '48px',
-              fontFamily: "'Rouge Script', cursive",
-              color: '#3D3D3D',
-              marginTop: '16px',
-              marginBottom: '16px',
-            }}>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "'Rouge Script', cursive", color: '#3D3D3D' }}>
               Cumpleaños
             </h1>
-            <p style={{
-              fontSize: '18px',
-              color: '#666',
-              lineHeight: '1.7',
-              fontFamily: "'Roboto', sans-serif",
-              marginTop: '16px',
-            }}>
-              Cada cumpleaños es único y merece ser celebrado con fotografías especiales. 
-              Desde primeras comuniones hasta bodas, capturamos la alegría, los colores 
+            <p className="text-lg mt-4 leading-relaxed" style={{ color: '#666', fontFamily: "'Roboto', sans-serif" }}>
+              Cada cumpleaños es único y merece ser celebrado con fotografías especiales.
+              Desde primeras comuniones hasta bodas, capturamos la alegría, los colores
               y la magia de cada celebración.
             </p>
-            <div style={{ marginTop: '32px' }}>
-              <h3 style={{
-                fontFamily: "'Roboto', sans-serif",
-                color: '#D48888',
-                fontWeight: '600',
-                marginBottom: '12px',
-              }}>¿Qué incluye esta sesión?</h3>
-              <ul style={{
-                listStyle: 'none',
-                padding: 0,
-                margin: 0,
-                fontFamily: "'Roboto', sans-serif",
-                color: '#666',
-              }}>
-                {[
-                  'Duración de 1-2 horas de sesión',
-                  '20 fotografías editadas en alta resolución',
-                  'Decoración temática incluida',
-                  'Cakesmash y globo opcional',
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
-                    <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#E8A4A4', flexShrink: 0 }}></span>
-                    {item}
-                  </li>
-                ))}
+            <div className="mt-8 space-y-4">
+              <h3 className="font-semibold mb-3" style={{ fontFamily: "'Roboto', sans-serif", color: '#D48888' }}>
+                ¿Qué incluye esta sesión?
+              </h3>
+              <ul className="space-y-2" style={{ color: '#666', fontFamily: "'Roboto', sans-serif" }}>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E8A4A4' }}></span>
+                  Duración de 1-2 horas de sesión
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E8A4A4' }}></span>
+                  20 fotografías editadas en alta resolución
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E8A4A4' }}></span>
+                  Decoración temática incluida
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: '#E8A4A4' }}></span>
+                  Cakesmash y globo opcional
+                </li>
               </ul>
             </div>
             <Link
               href="/reservas"
-              style={{
-                display: 'inline-block',
-                marginTop: '32px',
-                padding: '12px 32px',
-                borderRadius: '9999px',
-                backgroundColor: '#E8A4A4',
-                color: 'white',
-                fontFamily: "'Roboto', sans-serif",
-                transition: 'transform 0.2s, background-color 0.2s',
-                textDecoration: 'none',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'scale(1.05)';
-                e.currentTarget.style.backgroundColor = '#D48888';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'scale(1)';
-                e.currentTarget.style.backgroundColor = '#E8A4A4';
-              }}
+              className="inline-block mt-8 px-8 py-3 rounded-full transition-all hover:scale-105"
+              style={{ backgroundColor: '#E8A4A4', color: 'white', fontFamily: "'Roboto', sans-serif" }}
             >
               Reservar esta sesión
             </Link>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
-            gap: '12px',
-          }}>
+          {/* Galería de fotos en la columna derecha */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', alignItems: 'start' }}>
             {galleryImages.map((src, index) => (
               <div
                 key={index}
                 onClick={() => openLightbox(index)}
+                onMouseEnter={(e) => {
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  if (img) img.style.transform = 'scale(1.1)';
+                }}
+                onMouseLeave={(e) => {
+                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
+                  if (img) img.style.transform = 'scale(1)';
+                }}
                 style={{
-                  aspectRatio: '1/1',
-                  overflow: 'hidden',
+                  position: 'relative',
                   borderRadius: '12px',
+                  overflow: 'hidden',
                   cursor: 'pointer',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
+                  aspectRatio: '1/1',
+                  backgroundColor: '#f0f0f0'
                 }}
               >
                 <Image
@@ -152,8 +112,7 @@ export default function CumpleanosPage() {
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
                   className="object-cover transition-transform duration-300"
-                  onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
-                  onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  unoptimized
                 />
               </div>
             ))}
@@ -161,57 +120,29 @@ export default function CumpleanosPage() {
         </div>
       </Container>
 
+      {/* Lightbox */}
       {lightboxOpen && (
         <div
-          onClick={() => setLightboxOpen(false)}
-          style={{
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            backgroundColor: 'rgba(0,0,0,0.9)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            zIndex: 1000,
-            cursor: 'pointer',
-          }}
+          className="fixed inset-0 z-50 flex items-center justify-center"
+          style={{ backgroundColor: 'rgba(0,0,0,0.9)' }}
+          onClick={closeLightbox}
         >
+          <button
+            className="absolute top-4 right-4 p-2 text-white hover:text-[#E8A4A4] transition-colors"
+            onClick={closeLightbox}
+          >
+            <X className="w-8 h-8" />
+          </button>
           <Image
-            src={galleryImages[currentImage]}
-            alt="Lightbox"
+            src={galleryImages[selectedImage]}
+            alt="Ampliada"
             width={1600}
             height={1600}
             sizes="90vw"
-            style={{
-              maxWidth: '90vw',
-              maxHeight: '90vh',
-              objectFit: 'contain',
-              borderRadius: '8px',
-            }}
+            className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg"
+            unoptimized
             onClick={(e) => e.stopPropagation()}
           />
-          <button
-            onClick={() => setLightboxOpen(false)}
-            style={{
-              position: 'absolute',
-              top: '20px',
-              right: '20px',
-              background: 'white',
-              border: 'none',
-              borderRadius: '50%',
-              width: '40px',
-              height: '40px',
-              cursor: 'pointer',
-              fontSize: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            ×
-          </button>
         </div>
       )}
     </main>

@@ -138,3 +138,17 @@
 .dropdown-enter {
   animation: slideDown 0.2s ease-out forwards;
 }
+
+/* Dark Mode */
+[data-theme='dark'] {
+  --fresa: #C46B6B;
+  --fresa-light: #A55D5D;
+  --fresa-dark: #854545;
+  --kiwi: #5A956A;
+  --kiwi-light: #4A8C5A;
+  --kiwi-dark: #3A7050;
+  --crema: #2D2D2D;
+  --crema-dark: #1A1A1A;
+  --gray: #E5E5E5;
+  --gray-dark: #737373;
+}
