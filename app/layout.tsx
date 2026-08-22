@@ -3,6 +3,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { NavBar } from "@/components/navbar";
 import { DevToolsGuard } from "./devtools-guard";
+import { ThemeProvider } from "next-themes";
 import { siteConfig } from "@/lib/site-config";
 
 const LOGO_URL = "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
@@ -84,8 +85,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Rouge+Script:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
-        {/* Force light mode — prevents OS dark theme from bleeding into the preview/screenshots */}
-        <meta name="color-scheme" content="light only" />
+        {/* Enable light and dark color schemes */}
+        <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#fdf8f4" />
+        {/* Theme provider for automatic dark mode support */}
+        <ThemeProvider defaultTheme="system" attribute="data-theme" />
         {/* Schema.org: site metadata */}
         <script
           type="application/ld+json"
@@ -103,7 +107,8 @@ export default function RootLayout({
       <body
         className={cn(
           "font-sans",
-          "bg-white antialiased h-full w-full",
+          "antialiased h-full w-full",
+          "transition-colors",
         )}
         suppressHydrationWarning // Prevents browser extension conflicts
       >

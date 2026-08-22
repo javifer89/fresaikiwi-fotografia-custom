@@ -3,6 +3,7 @@
 import { Container } from "@/components/container";
 import { Footer } from "@/components/footer";
 import { Calendar, Gift } from "lucide-react";
+import { LazyIframe } from "@/components/lazy-iframe";
 
 const FRESA = "#E8A4A4";
 const FRESA_DARK = "#D48888";
@@ -42,19 +43,15 @@ export default function ReservasPage() {
               </div>
             </div>
 
-            {/* Booking iframe */}
+            {/* Booking iframe with lazy loading */}
             <div className="bg-white p-4 md:p-6 rounded-2xl shadow-xl overflow-hidden">
               <h2 className="text-3xl font-bold text-center mb-6" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
                 Reserva tu sesión
               </h2>
-              <iframe 
+              <LazyIframe
                 src="https://ohmyphoto.app/reservas/489/1061/fresaikiwifotografia"
-                width="100%" 
-                height="800" 
-                style={{border:0, display: 'block'}} 
-                loading="lazy" 
-                allowFullScreen
-                title="Sistema de reservas Fresaikiwi Fotografía"
+                height="800"
+                className="rounded-2xl"
               />
             </div>
 
