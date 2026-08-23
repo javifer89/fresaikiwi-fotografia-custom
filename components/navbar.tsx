@@ -91,7 +91,7 @@ export function NavBar() {
                     </Link>
                   ))}
                 </div>
-              )}
+              )} 
             </div>
 
             <Link
