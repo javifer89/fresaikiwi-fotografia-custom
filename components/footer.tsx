@@ -164,6 +164,9 @@ export function Footer() {
             <Link href="/aviso-legal" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
               Aviso legal
             </Link>
+                <Link href="/accesibilidad" className="text-xs text-gray-500 hover:text-gray-300 transition-colors">
+                  Accesibilidad
+                </Link>
           </div>
         </div>
       </div>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Fondo circular -->
+  <circle cx="32" cy="32" r="30" fill="#E8A4A4"/>
+  <!-- Contorno de candado -->
+  <path fill="#7BAE7F" d="M32 20c-6.6 0-12 5.4-12 12v12c0 2.8 2.2 5 5 5h8c2.8 0 5-2.2 5-5v-8c0-6.6-5.4-12-12-12Z"/>
+  <path fill="#7BAE7F" d="M24 38h8v4h-8v-4ZM32 28h8v12h-8V28ZM40 38c0 2.8-2.2 5-5 5h-8c-2.8 0-5-2.2-5-5v-8c0-2.8 2.2-5 5-5h4v4h-4Z"/>
+</svg>

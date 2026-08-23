@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+// Ignore missing type declarations for CSS modules in this project setup
+// @ts-ignore: Implicit any for CSS import
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { NavBar } from "@/components/navbar";
 import { DevToolsGuard } from "./devtools-guard";
+import { CookieBanner } from "@/components/CookieBanner";
 import { ThemeProvider } from "next-themes";
 import { siteConfig } from "@/lib/site-config";
 
@@ -37,15 +40,15 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     ...(siteConfig.ogImage
       ? {
-          images: [
-            {
-              url: siteConfig.ogImage,
-              width: 1200,
-              height: 630,
-              alt: `${siteConfig.name} - ${siteConfig.tagline}`,
-            },
-          ],
-        }
+        images: [
+          {
+            url: siteConfig.ogImage,
+            width: 1200,
+            height: 630,
+            alt: `${siteConfig.name} - ${siteConfig.tagline}`,
+          },
+        ],
+      }
       : {}),
   },
   twitter: {
@@ -112,7 +115,9 @@ export default function RootLayout({
         )}
         suppressHydrationWarning // Prevents browser extension conflicts
       >
+            <a href="#main" className="sr-only focus:focus-internal focus:outline-none">Ir al contenido principal</a>
         <DevToolsGuard />
+        <CookieBanner />
         <main className={siteConfig.showNavbar !== false ? "pt-24" : ""}>
           {siteConfig.showNavbar !== false && <NavBar />}
           {children}

@@ -97,7 +97,7 @@ export function FormspreeForm({
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6" data-webmcp="contacto" data-webmcp-schema="contactForm">
             {fields.map((field) => (
               <div key={field.name} className="space-y-2">
                 <Label htmlFor={field.name} className="text-base font-semibold">

@@ -122,7 +122,7 @@ export function HeroCarousel() {
               alt={slide.title}
               fill
               sizes="100vw"
-              priority={index === 0}
+              priority={index === 0} fetchPriority={index === 0 ? "high" : undefined}
               className="object-cover"
             />
           </div>

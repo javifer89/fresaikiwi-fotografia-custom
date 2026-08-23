@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Fondo -->
+  <rect width="64" height="64" fill="#7BAE7F"/>
+  <!-- Contorno de galleta -->
+  <path fill="#E8A4A4" d="M32 2C17.9 2 2 17.9 2 32s15.9 30 30 30S62 46.1 62 32S46.1 2 32 2Zm0 52c-7.1 0-13-5.9-13-13V32c0-7.1 5.9-13 13-13s13 5.9 13 13V59c0 7.1-5.9 13-13 13Zm21-15.4L38.6 38l7.1-7.1L51.4 31l-7.1 7.1ZM45.5 45.5l-7.1 7.1L35 41.9l7.1-7.1Z"/>
+</svg>
