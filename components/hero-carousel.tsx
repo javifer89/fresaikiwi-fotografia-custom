@@ -104,7 +104,7 @@ export function HeroCarousel() {
   }, [currentSlide, requestSlide]);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden -mt-20">
+    <section className="relative h-screen w-full overflow-hidden -mt-30">
       {/* Fade Background Images */}
       {slides.map((slide, index) => {
         if (!loadedSlides.has(index)) return null;
