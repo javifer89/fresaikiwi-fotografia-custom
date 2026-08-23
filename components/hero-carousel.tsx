@@ -151,11 +151,10 @@ export function HeroCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide
+            className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
                 ? "bg-white scale-125"
                 : "bg-white/50 hover:bg-white/80"
-            }`}
+              }`}
             aria-label={`Ir a slide ${index + 1}`}
           />
         ))}

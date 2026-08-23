@@ -36,7 +36,7 @@ export function NavBar() {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8"
-      style={{ backgroundColor: 'rgba(253, 248, 244, 0.92)', backdropFilter: 'blur(12px)' }}
+      style={{ backgroundColor: 'rgba(253, 248, 244, 0.3)', backdropFilter: 'blur(12px)' }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
@@ -91,7 +91,7 @@ export function NavBar() {
                     </Link>
                   ))}
                 </div>
-              )} 
+              )}
             </div>
 
             <Link
