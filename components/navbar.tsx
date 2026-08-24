@@ -186,7 +186,7 @@ export function NavBar() {
               <a
                 href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
                 className="py-2 px-4 rounded-lg text-sm font-medium text-center"
-                style={{ backgroundColor: '#25D366', color: 'white' }}
+                style={{ backgroundColor: '#7BAE7F', color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
