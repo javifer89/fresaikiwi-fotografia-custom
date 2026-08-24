@@ -31,8 +31,8 @@ export default function AboutPage() {
                 Somos un estudio fotográfico ubicado en Villajoyosa, especializado en capturar los momentos más especiales de tu vida. Nuestro nombre, Fresaikiwi, refleja nuestra filosofía: la combinación perfecta entre dulzura y frescura.
               </p>
               <p className="text-lg leading-relaxed mb-6" style={{color: '#6B6B6B'}}>
-                Con años de experiencia, nos hemos dedicado a crear recuerdos únicos y emotivos 
-                para familias de toda la región. Cada sesión es una oportunidad para capturar el tiempo 
+                Con años de experiencia, nos hemos dedicado a crear recuerdos únicos y emotivos
+                para familias de toda la región. Cada sesión es una oportunidad para capturar el tiempo
                 y crear arte que durará generaciones.
               </p>
             </div>
@@ -72,14 +72,14 @@ export default function AboutPage() {
                 <Heart className="w-8 h-8" style={{color: KIWI}} />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{color: KIWI}}>Dedicación</h3>
-              <p className="text-gray-600">Cada sesión recibe nuestra atención total y personalizado para ti.</p>
+              <p className="text-gray-600">Cada sesión recibe nuestra atención total y personalizada para ti.</p>
             </div>
             <div className="text-center p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
               <div className="w-16 h-16 mx-auto mb-6 rounded-full flex items-center justify-center" style={{backgroundColor: `${FRESA}33`}}>
                 <Sparkles className="w-8 h-8" style={{color: FRESA}} />
               </div>
               <h3 className="text-xl font-bold mb-3" style={{color: FRESA_DARK}}>Creatividad</h3>
-              <p className="text-gray-600">Buscamos siempre la innovación y ideas frescas para tus fotos.</p>
+              <p className="text-gray-600">No repetimos fórmulas. Diseñamos cada sesión para que sea irrepetible.</p>
             </div>
           </div>
         </Container>

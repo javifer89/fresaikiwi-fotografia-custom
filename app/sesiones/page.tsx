@@ -5,14 +5,12 @@ import Image from "next/image";
 import { Container } from "@/components/container";
 import { Footer } from "@/components/footer";
 import { Heart, Star, Camera, Users, Gift, Music, Crown } from "lucide-react";
-import { useState } from "react";
+import { SessionFilters } from "@/components/session-filters";
 
 const FRESA = "#E8A4A4";
 const FRESA_DARK = "#D48888";
 const KIWI = "#7BAE7F";
 const CREMA = "#FDF8F4";
-
-import { SessionFilters } from "@/components/session-filters";
 
 const sessions = [
   {
@@ -82,18 +80,12 @@ const sessions = [
 ];
 
 export default function SesionesPage() {
-  const [filter, setFilter] = useState<string>("all");
-
-  const filteredSessions = filter === "all"
-    ? sessions
-    : sessions.filter(session => session.slug === filter);
-
   return (
     <main className="min-h-screen">
       {/* Sessions Section */}
       <section className="py-16" style={{backgroundColor: CREMA}}>
         <Container>
-          <SessionFilters setFilter={setFilter} />
+          <SessionFilters />
           
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
             Nuestras Sesiones
@@ -104,7 +96,7 @@ export default function SesionesPage() {
 
           {/* Sessions Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredSessions.map((session) => {
+            {sessions.map((session) => {
               const IconComponent = session.icon;
               return (
                 <Link

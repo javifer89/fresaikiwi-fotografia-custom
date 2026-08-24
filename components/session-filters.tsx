@@ -1,64 +1,63 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Heart, Star, Camera, Users, Gift, Music, Crown } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 type FilterOption = {
   value: string;
   label: string;
-  icon: React.ComponentType<{ className?: string; color?: string }>;
+  icon: React.ComponentType<{ className?: string }>;
 };
 
 const filterOptions: FilterOption[] = [
-  { value: "all", label: "Todas las sesiones", icon: () => null },
-  { value: "embarazo", label: "Embarazo", icon: () => /* Camera icon would go here */ null },
-  { value: "newborn", label: "Newborn", icon: () => null },
-  { value: "cumpleanos", label: "Cumpleaños", icon: () => null },
-  { value: "comunión", label: "Comunión", icon: () => null },
-  { value: "navidad", label: "Navidad", icon: () => null },
-  { value: "familia", label: "Familia", icon: () => null },
-  { value: "musical", label: "Musical", icon: () => null },
-  { value: "moros-y-cristianos", label: "Moros y Cristianos", icon: () => null },
+  { value: "embarazo", label: "Embarazo", icon: Heart },
+  { value: "newborn", label: "Newborn", icon: Star },
+  { value: "cumpleanos", label: "Cumpleaños", icon: Gift },
+  { value: "comunion", label: "Comunión", icon: Crown },
+  { value: "navidad", label: "Navidad", icon: Star },
+  { value: "familia", label: "Familia", icon: Users },
+  { value: "musical", label: "Musical", icon: Music },
+  { value: "moros-y-cristianos", label: "Moros y Cristianos", icon: Camera },
 ];
 
 export function SessionFilters() {
-  const [selectedFilter, setSelectedFilter] = useState<string>("all");
-
-  const handleFilterChange = (value: string) => {
-    setSelectedFilter(value);
-  };
+  const pathname = usePathname();
+  const currentSlug = pathname.split("/sesiones/")[1] || "all";
 
   return (
     <div className="py-6 px-4 md:px-8 bg-white border-b border-gray-100 mb-5">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-wrap gap-2 justify-center">
-          <button
-            onClick={() => handleFilterChange("all")}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-              selectedFilter === "all"
+          <Link
+            href="/sesiones"
+            className={cn(
+              "px-4 py-2 rounded-full text-sm font-medium transition-all",
+              currentSlug === "all" || currentSlug === ""
                 ? "bg-[var(--fresa)] text-white"
-                : "text-[var(--gris)] hover:bg-gray-100"
-            }`}
-            style={{ color: selectedFilter === "all" ? "white" : "#3D3D3D" }}
+                : "text-[var(--gris)] hover:bg-gray-100",
+            )}
+            style={{ color: currentSlug === "all" || currentSlug === "" ? "white" : "#3D3D3D" }}
           >
             Todas
-          </button>
-          {filterOptions.map((option) => {
-            if (option.value === "all") return null;
-            return (
-              <button
-                key={option.value}
-                onClick={() => handleFilterChange(option.value)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  selectedFilter === option.value
-                    ? "bg-[var(--fresa)] text-white"
-                    : "text-[var(--gris)] hover:bg-gray-100"}
-                }`}
-                style={{ color: selectedFilter === option.value ? "white" : "#3D3D3D" }}
-              >
-                {option.label}
-              </button>
-            );
-          })}
+          </Link>
+          {filterOptions.map((option) => (
+            <Link
+              key={option.value}
+              href={`/sesiones/${option.value}`}
+              className={cn(
+                "px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5",
+                currentSlug === option.value
+                  ? "bg-[var(--fresa)] text-white"
+                  : "text-[var(--gris)] hover:bg-gray-100",
+              )}
+              style={{ color: currentSlug === option.value ? "white" : "#3D3D3D" }}
+            >
+              <option.icon className="w-3.5 h-3.5" />
+              {option.label}
+            </Link>
+          ))}
         </div>
       </div>
     </div>
