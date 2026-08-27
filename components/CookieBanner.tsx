@@ -48,6 +48,7 @@ export function CookieBanner() {
         background: BG_MAIN,
         color: "#fff",
         padding: "1rem",
+            paddingBottom: "calc(1rem + env(safe-area-inset-bottom))",
         fontSize: "0.875rem",
         zIndex: 9999,
         borderTop: "1px solid #444",

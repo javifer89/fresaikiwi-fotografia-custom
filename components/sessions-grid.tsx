@@ -83,7 +83,7 @@ export function SessionsGrid() {
             Nuestras Sesiones
           </span>
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
+            className="text-fluid-2xl font-bold mb-4"
             style={{ fontFamily: "'Cormorant Garamond', serif", color: GRIS }}
           >
             Cada momento merece su historia

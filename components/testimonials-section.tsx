@@ -58,7 +58,7 @@ export function TestimonialsSection() {
                 style={{ backgroundColor: '#E8A4A4', color: '#D48888' }}>
             Lo que dicen nuestras familias
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4"
+          <h2 className="text-fluid-2xl font-bold mb-4"
                 style={{ fontFamily: "'Rouge Script', cursive", color: '#3D3D3D' }}>
             Testimonios
           </h2>
