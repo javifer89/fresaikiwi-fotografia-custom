@@ -43,7 +43,7 @@ export default function NavidadPage() {
             <span className="inline-block px-4 py-1 rounded-full text-sm mb-4" style={{ backgroundColor: 'rgba(232,164,164,0.2)', color: '#D48888' }}>
               Temporada Especial
             </span>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "'Rouge Script', cursive", color: '#3D3D3D' }}>
+            <h1 className="text-fluid-2xl font-bold mb-4" style={{ fontFamily: "'Rouge Script', cursive", color: '#3D3D3D' }}>
               Navidad
             </h1>
             <p className="text-lg mt-4 leading-relaxed" style={{ color: '#666', fontFamily: "'Roboto', sans-serif" }}>
@@ -84,34 +84,19 @@ export default function NavidadPage() {
           </div>
 
           {/* Galería de fotos en la columna derecha */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {galleryImages.map((src, index) => (
               <div
                 key={index}
                 onClick={() => openLightbox(index)}
-                onMouseEnter={(e) => {
-                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                  if (img) img.style.transform = 'scale(1.1)';
-                }}
-                onMouseLeave={(e) => {
-                  const img = e.currentTarget.querySelector('img') as HTMLImageElement;
-                  if (img) img.style.transform = 'scale(1)';
-                }}
-                style={{
-                  position: 'relative',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                  aspectRatio: '1/1',
-                  backgroundColor: '#f0f0f0'
-                }}
+                className="relative rounded-xl overflow-hidden cursor-pointer aspect-square bg-gray-200 group"
               >
                 <Image
                   src={src}
                   alt={`Navidad ${index + 1}`}
                   fill
                   sizes="(min-width: 1024px) 25vw, 50vw"
-                  className="object-cover transition-transform duration-300"
+                  className="object-cover transition-transform duration-300 group-hover:scale-110"
                   unoptimized
                 />
               </div>

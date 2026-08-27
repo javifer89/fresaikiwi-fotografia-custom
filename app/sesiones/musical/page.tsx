@@ -23,7 +23,7 @@ export default function MusicalPage() {
             <span className="inline-block px-4 py-1 bg-[#E8A4A4]/20 text-[#D48888] rounded-full text-sm mb-4">
               Performing Arts
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>Musical</h2>
+            <h2 className="text-fluid-2xl font-bold mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>Musical</h2>
             <p className="text-lg text-gray-600 mt-4 leading-relaxed" style={{fontFamily: "'Roboto', sans-serif"}}>
               Para jóvenes artistas y performers que quieren capturar su pasión por la música 
               y el teatro. Sesiones dinámicas con iluminación teatral,vestuario de escenario 

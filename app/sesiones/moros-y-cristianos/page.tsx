@@ -23,7 +23,7 @@ export default function MorosCristianosPage() {
             <span className="inline-block px-4 py-1 bg-[#E8A4A4]/20 text-[#D48888] rounded-full text-sm mb-4">
               Sesión Especial
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>Moros y Cristianos</h2>
+            <h2 className="text-fluid-2xl font-bold mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>Moros y Cristianos</h2>
             <p className="text-lg text-gray-600 mt-4 leading-relaxed" style={{fontFamily: "'Roboto', sans-serif"}}>
               Una sesión fotográfica que celebra la tradición y el color de las fiestas de Moros y Cristianos. 
               Capturamos la elegancia de los trajes típicos, la riqueza de los desfiles y la emoción de esta 

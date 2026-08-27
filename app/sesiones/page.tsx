@@ -87,7 +87,7 @@ export default function SesionesPage() {
         <Container>
           <SessionFilters />
           
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
+          <h1 className="text-fluid-3xl font-bold text-center mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
             Nuestras Sesiones
           </h1>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto" style={{fontFamily: "'Roboto', sans-serif"}}>

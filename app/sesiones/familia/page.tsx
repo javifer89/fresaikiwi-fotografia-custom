@@ -23,7 +23,7 @@ export default function FamiliaPage() {
             <span className="inline-block px-4 py-1 bg-[#E8A4A4]/20 text-[#D48888] rounded-full text-sm mb-4">
               Familia
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{ fontFamily: "'Rouge Script', cursive", color: '#3D3D3D' }}>Familia</h2>
+            <h2 className="text-fluid-2xl font-bold mb-4" style={{ fontFamily: "'Rouge Script', cursive", color: '#3D3D3D' }}>Familia</h2>
             <p className="text-lg text-gray-600 mt-4 leading-relaxed" style={{ fontFamily: "'Roboto', sans-serif" }}>
               Las mejores historias se cuentan en familia. Capturamos la esencia de su vínculo, los momentos de complicidad y el amor que une a las familias. Ya sea en nuestro estudio o en ubicación exterior, creamos recuerdos que durarán toda la vida.
             </p>
