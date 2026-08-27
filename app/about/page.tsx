@@ -10,7 +10,7 @@ export default function AboutPage() {
         <section className="py-24" style={{backgroundColor: '#FDF8F4'}}>
           <Container>
             <div className="max-w-3xl mx-auto text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
+              <h2 className="text-fluid-2xl font-bold mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
                 Sobre Nosotros
               </h2>
               <p className="text-lg text-gray-600">

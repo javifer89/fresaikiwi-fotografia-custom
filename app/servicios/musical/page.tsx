@@ -16,7 +16,7 @@ export default function MusicalPage() {
       <section className="py-12 md:py-16" style={{backgroundColor: '#FDF8F4'}}>
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{fontFamily: "'Rouge Script', cursive", color: GRIS}}>
+            <h1 className="text-fluid-2xl font-bold mb-6" style={{fontFamily: "'Rouge Script', cursive", color: GRIS}}>
               Sesión Musical
             </h1>
             <p className="text-lg leading-relaxed mb-8" style={{color: '#6B6B6B', fontFamily: "'Roboto', sans-serif"}}>

@@ -54,7 +54,7 @@ export default function NewbornPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left: Text content */}
             <div className="lg:sticky lg:top-24">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{fontFamily: "'Rouge Script', cursive", color: GRIS}}>
+              <h1 className="text-fluid-2xl font-bold mb-6" style={{fontFamily: "'Rouge Script', cursive", color: GRIS}}>
                 Sesión de Newborn
               </h1>
               <p className="text-lg leading-relaxed mb-8" style={{color: '#6B6B6B', fontFamily: "'Roboto', sans-serif"}}>
