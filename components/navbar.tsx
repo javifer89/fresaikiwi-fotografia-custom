@@ -39,18 +39,19 @@ export function NavBar() {
       style={{ backgroundColor: 'rgba(253, 248, 244, 0.3)', backdropFilter: 'blur(12px)' }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src={LOGO_SRC}
-              alt="Fresaikiwi Fotografía"
-              width={160}
-              height={80}
-              priority
-              className="h-20 md:h-24 w-auto -mt-1 -mb-1"
-            />
-          </Link>
+      <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src={LOGO_SRC}
+                alt="Fresaikiwi Fotografía"
+                width={160}
+                height={80}
+                  priority
+                  className="h-20 md:h-24 w-auto -mt-1 -mb-1"
+                />
+              </Link>
+          
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -83,7 +84,7 @@ export function NavBar() {
                     <Link
                       key={session.slug}
                       href={`/sesiones/${session.slug}`}
-                      className="block py-2 px-3 text-sm rounded-lg transition-colors hover:bg-pink-50"
+                  className="block py-2 px-3 text-sm rounded-lg transition-colors hover:bg-pink-50"
                       style={{ color: GRIS }}
                       onClick={() => setSessionsDropdownOpen(false)}
                     >
@@ -104,7 +105,7 @@ export function NavBar() {
 
             <a
               href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
-              className="inline-flex items-center rounded-full bg-[#7BAE7F] text-white py-2 px-5 text-sm font-medium transition-colors hover:scale-105 shadow-md"
+              className="inline-flex items-center rounded-full bg-[#7BAE7F] text-white py-3 px-5 text-sm font-medium transition-colors hover:scale-105 shadow-md"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -114,11 +115,11 @@ export function NavBar() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-5 h-5 mr-2"   /* tamaño cómodo, quita el tamaño-6 original */
+                className="w-5 h-5 mr-2"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5
- 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392
- 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+     3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392
+     0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
               </svg>
               WhatsApp
             </a>
@@ -144,7 +145,7 @@ export function NavBar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t pt-4" style={{ borderColor: FRESA_LIGHT }}>
+          <div className="md:hidden mt-4 pb-4 border-t pt-4 px-4 rounded-b-2xl shadow-lg" style={{ borderColor: FRESA_LIGHT, backgroundColor: "rgba(253, 248, 244, 0.85)", backdropFilter: "blur(8px)" }}>
             <div className="flex flex-col gap-2">
               <Link
                 href="/sobre-nosotros"
@@ -164,7 +165,7 @@ export function NavBar() {
                     <Link
                       key={session.slug}
                       href={`/sesiones/${session.slug}`}
-                      className="py-1 text-sm rounded-lg transition-colors"
+                  className="py-1 text-sm rounded-lg transition-colors"
                       style={{ color: GRIS }}
                       onClick={() => setMobileMenuOpen(false)}
                     >
@@ -176,7 +177,7 @@ export function NavBar() {
 
               <Link
                 href="/reservas"
-                className="py-2 px-4 rounded-lg text-sm font-medium text-center"
+                className="py-3 px-4 rounded-lg text-sm font-medium text-center"
                 style={{ backgroundColor: FRESA, color: 'white' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
@@ -185,7 +186,7 @@ export function NavBar() {
 
               <a
                 href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
-                className="py-2 px-4 rounded-lg text-sm font-medium text-center"
+                className="py-3 px-4 rounded-lg text-sm font-medium text-center"
                 style={{ backgroundColor: '#7BAE7F', color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"

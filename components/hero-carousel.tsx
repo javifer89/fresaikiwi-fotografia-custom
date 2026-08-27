@@ -132,14 +132,14 @@ export function HeroCarousel() {
       {/* Navigation Arrows */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/25 backdrop-blur-sm text-white hover:bg-white/40 transition-all z-20"
+        className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/25 backdrop-blur-sm text-white hover:bg-white/40 transition-all z-20"
         aria-label="Slide anterior"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/25 backdrop-blur-sm text-white hover:bg-white/40 transition-all z-20"
+        className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/25 backdrop-blur-sm text-white hover:bg-white/40 transition-all z-20"
         aria-label="Slide siguiente"
       >
         <ChevronRight className="w-6 h-6" />
@@ -151,7 +151,7 @@ export function HeroCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
+            className={`w-5 h-5 rounded-full transition-all ${index === currentSlide
                 ? "bg-white scale-125"
                 : "bg-white/50 hover:bg-white/80"
               }`}
