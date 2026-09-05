@@ -23,7 +23,7 @@ const sessions = [
   { name: "Navidad", slug: "navidad" },
   { name: "Familia", slug: "familia" },
   { name: "Musical", slug: "musical" },
-  { name: "Moros y Cristianos", slug: "moros-y-cristianos" },
+ // { name: "Moros y Cristianos", slug: "moros-y-cristianos" },
 ];
 
 export function NavBar() {
