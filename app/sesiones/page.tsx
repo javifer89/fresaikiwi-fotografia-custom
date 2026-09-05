@@ -11,7 +11,7 @@ const FRESA = "#E8A4A4";
 const FRESA_DARK = "#D48888";
 const KIWI = "#7BAE7F";
 const CREMA = "#FDF8F4";
-
+//TODO: REVISAR PRECIOS SESIONES EN CADA CARD DEL GRID DE SESIONES
 const sessions = [
   {
     name: "Embarazo",
@@ -69,14 +69,14 @@ const sessions = [
     image: "https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg",
     icon: Music
   },
-  {
-    name: "Moros y Cristianos",
-    slug: "moros-y-cristianos",
-    description: "Tradición y orgullo local. Honramos la riqueza cultural de nuestras fiestas.",
-    price: "Desde 140€",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ROSA_CAPI-1.jpg",
-    icon: Camera
-  }
+  // {
+  //   name: "Moros y Cristianos",
+  //   slug: "moros-y-cristianos",
+  //   description: "Tradición y orgullo local. Honramos la riqueza cultural de nuestras fiestas.",
+  //   price: "Desde 140€",
+  //   image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ROSA_CAPI-1.jpg",
+  //   icon: Camera
+  // }
 ];
 
 export default function SesionesPage() {
@@ -86,7 +86,7 @@ export default function SesionesPage() {
       <section className="py-16" style={{backgroundColor: CREMA}}>
         <Container>
           <SessionFilters />
-          
+
           <h1 className="text-4xl md:text-5xl font-bold text-center mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
             Nuestras Sesiones
           </h1>
