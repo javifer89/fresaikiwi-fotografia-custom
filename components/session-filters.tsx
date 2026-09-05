@@ -18,7 +18,7 @@ const filterOptions: FilterOption[] = [
   { value: "comunion", label: "Comunión", icon: Crown },
   { value: "navidad", label: "Navidad", icon: Star },
   { value: "familia", label: "Familia", icon: Users },
-  { value: "musical", label: "Musical", icon: Music },
+  //{ value: "musical", label: "Musical", icon: Music },
   //{ value: "moros-y-cristianos", label: "Moros y Cristianos", icon: Camera },
 ];
 

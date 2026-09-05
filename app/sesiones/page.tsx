@@ -61,14 +61,14 @@ const sessions = [
     image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PAM_FAMILY-40.jpg",
     icon: Users
   },
-  {
-    name: "Musical",
-    slug: "musical",
-    description: "Pasión y ritmo en imagen. Portfolios profesionales para músicos y artistas.",
-    price: "Desde 160€",
-    image: "https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg",
-    icon: Music
-  },
+  // {
+  //   name: "Musical",
+  //   slug: "musical",
+  //   description: "Pasión y ritmo en imagen. Portfolios profesionales para músicos y artistas.",
+  //   price: "Desde 160€",
+  //   image: "https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg",
+  //   icon: Music
+  // },
   // {
   //   name: "Moros y Cristianos",
   //   slug: "moros-y-cristianos",

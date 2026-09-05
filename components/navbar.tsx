@@ -22,7 +22,7 @@ const sessions = [
   { name: "Comunión", slug: "comunion" },
   { name: "Navidad", slug: "navidad" },
   { name: "Familia", slug: "familia" },
-  { name: "Musical", slug: "musical" },
+  //{ name: "Musical", slug: "musical" },
  // { name: "Moros y Cristianos", slug: "moros-y-cristianos" },
 ];
 
