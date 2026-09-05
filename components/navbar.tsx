@@ -39,18 +39,19 @@ export function NavBar() {
       style={{ backgroundColor: 'rgba(253, 248, 244, 0.3)', backdropFilter: 'blur(12px)' }}
     >
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center">
-            <Image
-              src={LOGO_SRC}
-              alt="Fresaikiwi Fotografía"
-              width={160}
-              height={80}
-              priority
-              className="h-20 md:h-24 w-auto -mt-1 -mb-1"
-            />
-          </Link>
+      <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src={LOGO_SRC}
+                alt="Fresaikiwi Fotografía"
+                width={160}
+                height={80}
+                  priority
+                  className="h-20 md:h-24 w-auto -mt-1 -mb-1"
+                />
+              </Link>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -99,7 +100,7 @@ export function NavBar() {
               className="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105"
               style={{ backgroundColor: FRESA, color: 'white' }}
             >
-              Reservas
+              {/* Reservas */} Navidad 2026
             </Link>
 
             <a
@@ -180,7 +181,7 @@ export function NavBar() {
                 style={{ backgroundColor: FRESA, color: 'white' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Reservas
+                {/* Reservas */} Navidad 2026
               </Link>
 
               <a
