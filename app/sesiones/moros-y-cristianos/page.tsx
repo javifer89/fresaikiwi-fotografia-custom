@@ -9,7 +9,7 @@ import { ArrowLeft } from "lucide-react";
 export default function MorosCristianosPage() {
   return (
     <main className="min-h-screen" style={{backgroundColor: '#FDF8F4'}}>
-      {/* <Container>
+      <Container>
         <Link
           href="/sesiones"
           className="inline-flex items-center gap-2 text-[#D48888] hover:text-[#E8A4A4] transition-colors mb-8"
@@ -70,7 +70,7 @@ export default function MorosCristianosPage() {
 
           </div>
         </div>
-      </Container> */}
+      </Container>
     </main>
   );
 }
