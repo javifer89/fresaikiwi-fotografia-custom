@@ -3,6 +3,58 @@
  * All metadata, OG images, and branding read from here automatically.
  */
 
+export interface HeroSlide {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+export const heroSlides: readonly HeroSlide[] = [
+  {
+    id: 1,
+    title: "Sesiones de Embarazo",
+    subtitle: "Captura la belleza de esta etapa única",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ALEJANDRI_9M-43.jpg"
+  },
+  {
+    id: 2,
+    title: "Comuniones y Celebraciones",
+    subtitle: "Recuerdos especiales para días únicos",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/CARLOTA_2ANYS-147.jpg"
+  },
+  {
+    id: 3,
+    title: "Exteriores y Familia",
+    subtitle: "Sesiones al aire libre llenas de luz",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EDURNE_EXTERIORS-135.jpg"
+  },
+  {
+    id: 4,
+    title: "Sesiones Infantiles",
+    subtitle: "La magia de la infancia en cada foto",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LAURA-1 copia.jpg"
+  },
+  {
+    id: 5,
+    title: "Retratos con Estilo",
+    subtitle: "Captura tu esencia y personalidad",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/MARC-41 copia.jpg"
+  },
+  {
+    id: 6,
+    title: "Sesiones Familiares",
+    subtitle: "Momentos en familia para siempre",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PAM_FAMILY-40.jpg"
+  },
+  {
+    id: 7,
+    title: "Decorados y Temáticas",
+    subtitle: "Creaciones únicas para cada sesión",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PROBA_DECORAT-22 copia 2.jpg"
+  }
+] as const;
+
 export const siteConfig = {
   // Basic Info
   name: "Fresaikiwi Fotografía",

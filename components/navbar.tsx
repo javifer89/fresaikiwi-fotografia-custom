@@ -3,28 +3,11 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X, ChevronDown, Camera } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { sessionsForNav } from "@/lib/data/sessions";
 
 const LOGO_SRC =
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
-
-const FRESA = "#E8A4A4";
-const FRESA_DARK = "#D48888";
-const FRESA_LIGHT = "#F5D5D5";
-const KIWI = "#7BAE7F";
-const KIWI_LIGHT = "#D4EAD7";
-const GRIS = "#3D3D3D";
-
-const sessions = [
-  { name: "Embarazo", slug: "embarazo" },
-  { name: "Newborn", slug: "newborn" },
-  { name: "Cumpleaños", slug: "cumpleanos" },
-  { name: "Comunión", slug: "comunion" },
-  { name: "Navidad", slug: "navidad" },
-  { name: "Familia", slug: "familia" },
-  { name: "Musical", slug: "musical" },
- // { name: "Moros y Cristianos", slug: "moros-y-cristianos" },
-];
 
 export function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -39,26 +22,25 @@ export function NavBar() {
       style={{ backgroundColor: 'rgba(253, 248, 244, 0.3)', backdropFilter: 'blur(12px)' }}
     >
       <div className="max-w-7xl mx-auto">
-      <div className="flex items-center justify-between">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <Image
-                src={LOGO_SRC}
-                alt="Fresaikiwi Fotografía"
-                width={160}
-                height={80}
-                  priority
-                  className="h-20 md:h-24 w-auto -mt-1 -mb-1"
-                />
-              </Link>
-
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src={LOGO_SRC}
+              alt="Fresaikiwi Fotografía"
+              width={160}
+              height={80}
+              priority
+              className="h-20 md:h-24 w-auto -mt-1 -mb-1"
+            />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/sobre-nosotros"
               className="text-sm font-medium transition-colors hover:opacity-70"
-              style={{ color: GRIS }}
+              style={{ color: 'var(--gris)' }}
             >
               Sobre nosotros
             </Link>
@@ -68,7 +50,7 @@ export function NavBar() {
               <button
                 onClick={() => setSessionsDropdownOpen(!sessionsDropdownOpen)}
                 className="flex items-center gap-1 text-sm font-medium transition-colors hover:opacity-70"
-                style={{ color: GRIS }}
+                style={{ color: 'var(--gris)' }}
               >
                 Sesiones
                 <ChevronDown className={`w-4 h-4 transition-transform ${sessionsDropdownOpen ? 'rotate-180' : ''}`} />
@@ -80,12 +62,12 @@ export function NavBar() {
                   style={{ backgroundColor: 'white' }}
                   onMouseLeave={() => setSessionsDropdownOpen(false)}
                 >
-                  {sessions.map((session) => (
+                  {sessionsForNav.map((session) => (
                     <Link
                       key={session.slug}
                       href={`/sesiones/${session.slug}`}
                       className="block py-2 px-3 text-sm rounded-lg transition-colors hover:bg-pink-50"
-                      style={{ color: GRIS }}
+                      style={{ color: 'var(--gris)' }}
                       onClick={() => setSessionsDropdownOpen(false)}
                     >
                       {session.name}
@@ -98,14 +80,14 @@ export function NavBar() {
             <Link
               href="/reservas"
               className="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105"
-              style={{ backgroundColor: FRESA, color: 'white' }}
+              style={{ backgroundColor: 'var(--fresa)', color: 'white' }}
             >
               {/* Reservas */} Navidad 2026
             </Link>
 
             <a
               href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
-              className="inline-flex items-center rounded-full bg-[#7BAE7F] text-white py-2 px-5 text-sm font-medium transition-colors hover:scale-105 shadow-md"
+              className="inline-flex items-center rounded-full bg-[var(--kiwi)] text-white py-2 px-5 text-sm font-medium transition-colors hover:scale-105 shadow-md"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -115,7 +97,7 @@ export function NavBar() {
                 viewBox="0 0 24 24"
                 strokeWidth={2}
                 stroke="currentColor"
-                className="w-5 h-5 mr-2"   /* tamaño cómodo, quita el tamaño-6 original */
+                className="w-5 h-5 mr-2"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5
  3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392
@@ -127,7 +109,7 @@ export function NavBar() {
             <Link
               href="/contacto"
               className="text-sm font-medium transition-colors hover:opacity-70"
-              style={{ color: GRIS }}
+              style={{ color: 'var(--gris)' }}
             >
               Contacto
             </Link>
@@ -145,28 +127,28 @@ export function NavBar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t pt-4" style={{ borderColor: FRESA_LIGHT }}>
+          <div className="md:hidden mt-4 pb-4 border-t pt-4" style={{ borderColor: 'var(--fresa-light)' }}>
             <div className="flex flex-col gap-2">
               <Link
                 href="/sobre-nosotros"
                 className="py-2 px-4 rounded-lg text-sm font-medium"
-                style={{ color: GRIS }}
+                style={{ color: 'var(--gris)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Sobre nosotros
               </Link>
 
               <div className="py-2 px-4">
-                <p className="text-xs font-semibold uppercase mb-2" style={{ color: KIWI }}>
+                <p className="text-xs font-semibold uppercase mb-2" style={{ color: 'var(--kiwi)' }}>
                   Sesiones
                 </p>
                 <div className="pl-2 flex flex-col gap-1">
-                  {sessions.map((session) => (
+                  {sessionsForNav.map((session) => (
                     <Link
                       key={session.slug}
                       href={`/sesiones/${session.slug}`}
                       className="py-1 text-sm rounded-lg transition-colors"
-                      style={{ color: GRIS }}
+                      style={{ color: 'var(--gris)' }}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {session.name}
@@ -178,7 +160,7 @@ export function NavBar() {
               <Link
                 href="/reservas"
                 className="py-2 px-4 rounded-lg text-sm font-medium text-center"
-                style={{ backgroundColor: FRESA, color: 'white' }}
+                style={{ backgroundColor: 'var(--fresa)', color: 'white' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {/* Reservas */} Navidad 2026
@@ -187,7 +169,7 @@ export function NavBar() {
               <a
                 href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
                 className="py-2 px-4 rounded-lg text-sm font-medium text-center"
-                style={{ backgroundColor: '#7BAE7F', color: 'white' }}
+                style={{ backgroundColor: 'var(--kiwi)', color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -197,7 +179,7 @@ export function NavBar() {
               <Link
                 href="/contacto"
                 className="py-2 px-4 rounded-lg text-sm font-medium"
-                style={{ color: GRIS }}
+                style={{ color: 'var(--gris)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Contacto
