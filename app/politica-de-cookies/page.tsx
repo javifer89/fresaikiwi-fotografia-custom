@@ -14,11 +14,11 @@ export default function PoliticaCookies() {
       <article className="prose lg:prose-xl text-left">
         <h1 className="text-3xl font-bold mb-4">Política de Cookies</h1>
 
-        <p><strong>Última actualización:</strong> [día] de [mes] de [año]</p>
+        <p><strong>Última actualización:</strong> 11 de septiembre de 2026</p>
 
         <p>
           En
-          <strong>[Nombre de tu empresa]</strong> utilizamos cookies y tecnologías
+          <strong>Fresaikiwi Fotografía</strong> utilizamos cookies y tecnologías
           similares para mejorar la experiencia del usuario, analizar el tráfico
           y mostrar publicidad personalizada. A continuación, te explicamos qué
           son, qué tipos utilizamos y cómo puedes configurarlas.
@@ -127,7 +127,7 @@ export default function PoliticaCookies() {
           para la correcta visualización del sitio.
         </p>
 
-        <p><strong>Contacto:</strong> <a href="mailto:info@tudominio.com">info@tudominio.com</a></p>
+        <p><strong>Contacto:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a></p>
       </article>
     </main>
   );

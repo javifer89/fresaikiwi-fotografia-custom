@@ -17,12 +17,12 @@ export default function Accesibilidad() {
         </h1>
 
         <p>
-          <strong>Última actualización:</strong> [día] de [mes] de [año]
+          <strong>Última actualización:</strong> 11 de septiembre de 2026
         </p>
 
         <h2 className="text-2xl font-semibold mt-6">1. Compromiso de la empresa</h2>
         <p>
-          [Tu empresa] se compromete a hacer accesible el contenido de su sitio web
+          Fresaikiwi Fotografía se compromete a hacer accesible el contenido de su sitio web
           de conformidad con el <strong>Programa Kit Digital</strong> y la normativa
           <strong>UNE‑EN 301 549:2022</strong>, que desarrolla las directrices WCAG 2.1 AA.
         </p>
@@ -61,10 +61,8 @@ export default function Accesibilidad() {
 
         <h2 className="text-2xl font-semibold mt-6">4. Preparación de la declaración</h2>
         <p>
-          La presente declaración fue preparada el <strong>1 de enero de 2025</strong>
-          por [Nombre del responsable o empresa externa]. Se siguieron las pautas WCAG 2.1 AA
-          y se contó con la certificación de <em>QDQ MEDIA SAU</em> (o el auditor que
-          corresponda).
+          La presente declaración fue preparada el <strong>11 de septiembre de 2026</strong>
+          por Fresaikiwi Fotografía. Se siguieron las pautas WCAG 2.1 AA.
         </p>
 
         <h2 className="text-2xl font-semibold mt-6">5. Observaciones y datos de contacto</h2>

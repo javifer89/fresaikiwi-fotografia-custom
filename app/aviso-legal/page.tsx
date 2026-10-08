@@ -14,32 +14,32 @@ export default function AvisoLegal() {
       <article className="prose lg:prose-xl text-left">
         <h1 className="text-3xl font-bold mb-4">Aviso Legal</h1>
 
-        <p><strong>Última actualización:</strong> [día] de [mes] de [año]</p>
+        <p><strong>Última actualización:</strong> 11 de septiembre de 2026</p>
 
         <h2 className="text-2xl font-semibold mt-6">1. Identidad del prestador</h2>
         <ul>
           <li>
-            <strong>Nombre comercial / razón social:</strong> [Tu empresa]
+            <strong>Nombre comercial / razón social:</strong> Fresaikiwi Fotografía
           </li>
           <li>
             <strong>CIF / NIE / NIF:</strong> [Número de identificación fiscal]
           </li>
           <li>
-            <strong>Domicilio social:</strong> [Dirección completa]
+            <strong>Domicilio social:</strong> C/ Constitución nº20, local izquierda, 03570 La Vila Joiosa, Alicante
           </li>
           <li>
-            <strong>Correo electrónico:</strong> <a href="mailto:info@tudominio.com">info@tudominio.com</a>
+            <strong>Correo electrónico:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a>
           </li>
           <li>
-            <strong>Teléfono:</strong> [Número de contacto]
+            <strong>Teléfono:</strong> (+34) 633 52 08 62
           </li>
         </ul>
 
         <h2 className="text-2xl font-semibold mt-6">2. Objeto</h2>
         <p>
           El presente aviso legal regula el uso y acceso al sitio web
-          <strong>www.tudominio.com</strong>, cuya titularidad pertenece a
-          <strong>[Tu empresa]</strong>. El objetivo es ofrecer información sobre
+          <strong>fresaikiwi-fotografia.com</strong>, cuya titularidad pertenece a
+          <strong>Fresaikiwi Fotografía</strong>. El objetivo es ofrecer información sobre
           nuestros servicios, productos y demás contenidos, así como facilitar la
           relación con los usuarios de conformidad con la normativa española.
         </p>
@@ -68,7 +68,7 @@ export default function AvisoLegal() {
         <ul>
           <li>
             Todos los contenidos (texto, imágenes, diseño, código, logotipos) son
-            propiedad exclusiva de [Tu empresa] o de sus licenciadores y están
+            propiedad exclusiva de Fresaikiwi Fotografía o de sus licenciadores y están
             protegidos por la legislación de propiedad intelectual e industrial.
           </li>
           <li>
@@ -112,7 +112,7 @@ export default function AvisoLegal() {
         <h2 className="text-2xl font-semibold mt-6">8. Legislación aplicable y jurisdicción</h2>
         <p>
           Las presentes condiciones se rigen por la legislación española. Cualquier
-          controversia se someterá a los tribunales de [Ciudad/Provincia], salvo
+          controversia se someterá a los tribunales de Alicante, salvo
           disposición legal imperativa en contrario.
         </p>
 
@@ -127,7 +127,7 @@ export default function AvisoLegal() {
         <ul>
           <li>
             <strong>Proveedor de servicios de la sociedad de la información:</strong>
-            [Tu empresa], con domicilio en [dirección].
+            Fresaikiwi Fotografía, con domicilio en C/ Constitución nº20, local izquierda, 03570 La Vila Joiosa, Alicante.
           </li>
           <li>
             <strong>Registro:</strong> [Si estuviera inscrito en algún registro
@@ -139,7 +139,7 @@ export default function AvisoLegal() {
           </li>
         </ul>
 
-        <p><strong>Contacto para consultas o reclamaciones:</strong> <a href="mailto:info@tudominio.com">info@tudominio.com</a> o la dirección del apartado 1.</p>
+        <p><strong>Contacto para consultas o reclamaciones:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a> o la dirección del apartado 1.</p>
       </article>
     </main>
   );
