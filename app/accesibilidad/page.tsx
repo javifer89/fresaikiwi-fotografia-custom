@@ -46,10 +46,10 @@ export default function Accesibilidad() {
             <strong>Saltos de bloque:</strong> Enlace "Ir al contenido principal" (skip link) como primer elemento enfocable.
           </li>
           <li>
-            <strong>Formularios accesibles:</strong> Etiquetas <code><label></code> asociadas a cada campo (<code>htmlFor</code>/<code>id</code>); indicadores de campo requerido; mensajes de error claros.
+            <strong>Formularios accesibles:</strong> Etiquetas <code>label</code> asociadas a cada campo (<code>htmlFor</code>/<code>id</code>); indicadores de campo requerido; mensajes de error claros.
           </li>
           <li>
-            <strong>Idioma de la página:</strong> <code><html lang="es"></code> declarado.
+            <strong>Idioma de la página:</strong> <code>html lang="es"</code> declarado.
           </li>
           <li>
             <strong>Redimensionado de texto:</strong> Unidades relativas (<code>rem</code>, <code>em</code>, <code>%</code>); contenido refluible hasta 200% sin pérdida de funcionalidad.
@@ -120,8 +120,8 @@ export default function Accesibilidad() {
         <ul className="list-disc list-inside mt-2 space-y-1">
           <li>
             <strong>Correo electrónico:</strong>
-            <a href="mailto:accesibilidad@fresaikiwifotografia.com">
-              accesibilidad@fresaikiwifotografia.com
+            <a href="mailto:info@fresaikiwifotografia.com">
+              info@fresaikiwifotografia.com
             </a>
           </li>
           <li>
