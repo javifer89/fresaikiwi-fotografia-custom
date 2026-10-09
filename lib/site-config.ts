@@ -61,14 +61,14 @@ export const siteConfig = {
   tagline: "Capturando momentos irrepetibles",
   description:
     "Estudio de fotografía especializado en sesiones de embarazo, newborn, comuniones, bodas y sesiones familiares en Villajoyosa. Cada imagen cuenta una historia única.",
-  
+
   // Contact Info
   phone: "633 52 08 62",
   email: "info@fresaikiwifotografia.com",
   address: "Villajoyosa, Alicante",
 
   // Site URL (replaced automatically on deploy)
-  url: process.env.NEXT_PUBLIC_URL || "https://fresaikiwi-fotografia.com",
+  url: process.env.NEXT_PUBLIC_URL || "https://fresaikiwifotografia.com",
 
   // Layout: navbar is hidden by default. Set to true for marketing/landing sites.
   showNavbar: true,

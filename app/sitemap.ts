@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://fresaikiwi-fotografia.com";
+  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://fresaikiwifotografia.com";
 
   // Add your static pages here
   const staticPages = [
