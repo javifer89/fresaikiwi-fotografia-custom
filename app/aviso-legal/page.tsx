@@ -1,18 +1,15 @@
-import Image from "next/image";
+import { IconAvisoLegal } from "@/components/LegalIcons";
 
 export default function AvisoLegal() {
   return (
     <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
-      <Image
-        src="/images/aviso-legal.svg"
-        alt="Aviso legal"
-        width={200}
-        height={200}
-        loading="lazy"
-        className="mx-auto mb-6"
-      />
+      <div className="text-center mb-8">
+        <IconAvisoLegal className="w-14 h-14 mx-auto text-[var(--kiwi)]" aria-label="Aviso legal" />
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'var(--gris)' }}>
+          Aviso Legal
+        </h1>
+      </div>
       <article className="prose lg:prose-xl text-left">
-        <h1 className="text-3xl font-bold mb-4">Aviso Legal</h1>
 
         <p><strong>Última actualización:</strong> 11 de septiembre de 2026</p>
 
@@ -21,9 +18,9 @@ export default function AvisoLegal() {
           <li>
             <strong>Nombre comercial / razón social:</strong> Fresaikiwi Fotografía
           </li>
-          <li>
+          {/* <li>
             <strong>CIF / NIE / NIF:</strong> [Número de identificación fiscal]
-          </li>
+          </li> */}
           <li>
             <strong>Domicilio social:</strong> C/ Constitución nº20, local izquierda, 03570 La Vila Joiosa, Alicante
           </li>
@@ -37,9 +34,7 @@ export default function AvisoLegal() {
 
         <h2 className="text-2xl font-semibold mt-6">2. Objeto</h2>
         <p>
-          El presente aviso legal regula el uso y acceso al sitio web
-          <strong>fresaikiwi-fotografia.com</strong>, cuya titularidad pertenece a
-          <strong>Fresaikiwi Fotografía</strong>. El objetivo es ofrecer información sobre
+          El presente aviso legal regula el uso y acceso al sitio web <strong>fresaikiwifotografia.com</strong>, cuya titularidad pertenece a <strong>Fresaikiwi Fotografía</strong>. El objetivo es ofrecer información sobre
           nuestros servicios, productos y demás contenidos, así como facilitar la
           relación con los usuarios de conformidad con la normativa española.
         </p>
@@ -129,10 +124,10 @@ export default function AvisoLegal() {
             <strong>Proveedor de servicios de la sociedad de la información:</strong>
             Fresaikiwi Fotografía, con domicilio en C/ Constitución nº20, local izquierda, 03570 La Vila Joiosa, Alicante.
           </li>
-          <li>
+          {/* <li>
             <strong>Registro:</strong> [Si estuviera inscrito en algún registro
             público, indíquelo aquí, p. ej. Registro Mercantil].
-          </li>
+          </li> */}
           <li>
             <strong>Datos de contacto:</strong> Los canales dispuestos para la
             comunicación con los usuarios son los indicados en el apartado 1.

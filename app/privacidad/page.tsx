@@ -1,18 +1,15 @@
-import Image from "next/image";
+import { IconPrivacidad } from "@/components/LegalIcons";
 
 export default function Privacidad() {
   return (
     <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
-      <Image
-        src="/images/privacidad.svg"
-        alt="Política de privacidad"
-        width={200}
-        height={200}
-        loading="lazy"
-        className="mx-auto mb-6"
-      />
+      <div className="text-center mb-8">
+        <IconPrivacidad className="w-14 h-14 mx-auto text-[var(--fresa)]" aria-label="Política de privacidad" />
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'var(--gris)' }}>
+          Política de Privacidad
+        </h1>
+      </div>
       <article className="prose lg:prose-xl text-left">
-        <h1 className="text-3xl font-bold mb-4">Política de Privacidad</h1>
 
         <p><strong>Última actualización:</strong> 11 de septiembre de 2026</p>
 
@@ -123,7 +120,7 @@ export default function Privacidad() {
           Publicaremos cualquier modificación en esta página y, cuando sea necesario, te notificaremos por correo electrónico o dentro del propio sitio. Te sugerimos revisar esta sección periódicamente.
         </p>
 
-        <p><strong>Contacto para consultas:</strong> <a href="mailto:protecciondatos@fresaikiwifotografia.com">protecciondatos@fresaikiwifotografia.com</a> o la dirección indicada en el apartado 1.</p>
+        <p><strong>Contacto para consultas:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a> o la dirección indicada en el apartado 1.</p>
       </article>
     </main>
   );

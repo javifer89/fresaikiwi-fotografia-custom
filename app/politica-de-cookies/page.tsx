@@ -1,24 +1,20 @@
-import Image from "next/image";
+import { IconCookies } from "@/components/LegalIcons";
 
 export default function PoliticaCookies() {
   return (
     <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
-      <Image
-        src="/images/cookies.svg"
-        alt="Política de cookies"
-        width={200}
-        height={200}
-        loading="lazy"
-        className="mx-auto mb-6"
-      />
+      <div className="text-center mb-8">
+        <IconCookies className="w-14 h-14 mx-auto text-[var(--kiwi)]" aria-label="Política de cookies" />
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'var(--gris)' }}>
+          Política de Cookies
+        </h1>
+      </div>
       <article className="prose lg:prose-xl text-left">
-        <h1 className="text-3xl font-bold mb-4">Política de Cookies</h1>
 
         <p><strong>Última actualización:</strong> 11 de septiembre de 2026</p>
 
         <p>
-          En
-          <strong>Fresaikiwi Fotografía</strong> utilizamos cookies y tecnologías
+          En <strong>Fresaikiwi Fotografía</strong> utilizamos cookies y tecnologías
           similares para mejorar la experiencia del usuario, analizar el tráfico
           y mostrar publicidad personalizada. A continuación, te explicamos qué
           son, qué tipos utilizamos y cómo puedes configurarlas.
