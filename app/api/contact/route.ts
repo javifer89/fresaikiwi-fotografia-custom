@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
 const MAX_REQUESTS = 3; // 3 requests per minute per IP
-const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT || "https://formspree.io/f/xyzaabcd";
+// Required: without it we must fail closed instead of leaking submissions
+// to a fallback endpoint that is not ours.
+const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT;
 
 const ipRequestCounts = new Map<string, { count: number; resetTime: number }>();
 
@@ -31,6 +33,16 @@ function isRateLimited(ip: string): boolean {
 }
 
 export async function POST(request: NextRequest) {
+  if (!FORMSPREE_ENDPOINT) {
+    console.error(
+      "FORMSPREE_ENDPOINT is not configured. Set it in .env.local or in the Vercel project environment variables.",
+    );
+    return NextResponse.json(
+      { error: "El formulario no está disponible en este momento." },
+      { status: 500 }
+    );
+  }
+
   const ip = getClientIp(request);
 
   if (isRateLimited(ip)) {
