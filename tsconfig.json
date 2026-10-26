@@ -20,9 +20,7 @@
     "paths": {
       "@/*": ["./*"],
       "@components/*": ["./components/*"],
-      "@lib/*": ["./lib/*"],
-      "@constants/*": ["./constants/*"],
-      "@context/*": ["./context/*"]
+      "@lib/*": ["./lib/*"]
     },
     "target": "ES2017",
     "baseUrl": "."

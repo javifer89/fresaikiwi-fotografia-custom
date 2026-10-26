@@ -1,209 +1,113 @@
-# AI SaaS Template - COMPLETE & READY TO USE
+# Fresaikiwi Fotografía
 
-🚨 **AI ASSISTANT**: This template is FULLY CONFIGURED. DO NOT recreate basic files!
+Website for Fresaikiwi Fotografía, a photography studio in Villajoyosa (Alicante, Spain) specializing in pregnancy, newborn, children, communion, family, and themed photo sessions.
 
-⚡ **STATUS**: All dependencies installed, all pages created, everything works out of the box.
+Built with Next.js App Router, statically generated, with images served from Supabase Storage.
 
-## 🤖 AI Instructions - READ THIS FIRST
+## Stack
 
-### ✅ What EXISTS (Don't Create):
+- **Next.js 16** (App Router, Turbopack, standalone output)
+- **React 19** with Server Components by default
+- **TypeScript** (strict)
+- **Tailwind CSS v4** (CSS-first config in `app/globals.css`)
+- **next/font** — Cormorant Garamond, Roboto, and Rouge Script are self-hosted at build time
+- **sharp** for image optimization
 
-- `package.json` with all dependencies
-- Authentication pages in `(auth)/`
-- Marketing pages in `app/blog/`, `app/pricing/`, `app/contact/`
-- All UI components in `components/`
-- Tailwind CSS configuration
-- TypeScript configuration
-
-### 🎯 What to BUILD:
-
-- New pages specific to user needs
-- Custom components using existing ones
-- Business logic and features
-- API integrations
-
-### ❌ Common MISTAKES to AVOID:
-
-1. Creating `package.json` → IT EXISTS
-2. Installing packages → ALL INCLUDED
-3. Creating login/signup → USE `(auth)/login` and `(auth)/signup`
-4. Adding console.log → NOT ALLOWED
-5. Configuring Tailwind → ALREADY DONE
-
-## 🚀 Features
-
-- **Next.js 15** with App Router
-- **Turbopack** enabled for 10x faster HMR
-- **React 19** with Server Components
-- **TypeScript** for type safety
-- **Tailwind CSS** for styling
-- **Framer Motion** for animations
-- **MDX Blog** with syntax highlighting
-- **Authentication Pages** (Login/Signup)
-- **Marketing Pages** (Landing, Pricing, Contact)
-- **Dark Mode** support
-- **SEO Optimized**
-- **Performance First** - Lighthouse score 100
-
-## ⚡ Performance
-
-- **Dev Server Startup**: <2 seconds
-- **Hot Module Replacement**: <100ms
-- **Production Build**: <30 seconds
-- **First Load JS**: ~75kB
-
-## 🏃‍♂️ Quick Start
+## Getting started
 
 ```bash
-# Install dependencies (using pnpm for speed)
-pnpm install
-
-# Start development server with Turbopack
-pnpm dev
-
-# Ultra-fast development mode
-pnpm dev:fast
+npm install
+cp .env.example .env.local   # then fill in the values
+npm run dev
 ```
 
-## 📁 Project Structure
+The site runs at http://localhost:3000.
+
+## Environment variables
+
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `FORMSPREE_ENDPOINT` | Yes | Formspree form URL that receives contact submissions. `/api/contact` returns HTTP 500 while it is missing — it fails closed by design. |
+| `NEXT_PUBLIC_URL` | No | Public site origin used by metadata, `sitemap.xml`, and `robots.txt`. Falls back to `https://fresaikiwifotografia.com`. |
+
+Locally these live in `.env.local`, which is gitignored. On Vercel they must be set in the project settings; `.env.local` is not committed and is not copied into the standalone build output.
+
+## Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Development server |
+| `npm run build` | Production build |
+| `npm run start` | Serve the production build |
+| `npm run lint` | ESLint |
+| `npm run type-check` | `tsc --noEmit` |
+| `npm run ci` | Type check plus lint |
+| `npm run clean` | Remove `.next` and the dependency cache |
+
+## Project structure
 
 ```
 app/
-├── (auth)/          # Authentication pages
-│   ├── login/
-│   └── signup/
-├── blog/            # MDX blog posts
-├── contact/         # Contact page
-├── pricing/         # Pricing page
-├── page.tsx         # Landing page
-├── api/             # API routes
-├── layout.tsx       # Root layout
-└── globals.css      # Global styles
+├── page.tsx                    # Home (hero carousel, highlights)
+├── sesiones/
+│   ├── page.tsx                # Session index with filters
+│   └── [slug]/page.tsx         # Session detail, driven by lib/data/sessions.ts
+├── sobre-nosotros/page.tsx
+├── reservas/page.tsx
+├── contacto/page.tsx
+├── privacidad/                 # Legal pages
+├── aviso-legal/
+├── politica-de-cookies/
+├── accesibilidad/
+├── api/contact/route.ts        # Forwards contact submissions to Formspree
+├── layout.tsx                  # Fonts, theme, navbar, footer, single <main>
+├── sitemap.ts
+└── robots.ts
 
-components/
-├── ui/              # Reusable UI components
-├── navbar/          # Navigation components
-└── [features]/      # Feature-specific components
+components/                     # Navbar, footer, forms, gallery, lightbox
+lib/
+├── data/sessions.ts            # Single source of truth for the 8 sessions
+├── site-config.ts              # Site name, contact details, keywords, nav links
+└── utils.ts
+public/                         # Icons, legal illustrations, llms.txt, manifest
 ```
 
-## 🛠️ Commands
+### Adding or editing a session
 
-- `pnpm dev` - Start development server with Turbopack
-- `pnpm dev:fast` - Ultra-fast dev mode (skips checks)
-- `pnpm build` - Production build
-- `pnpm build:fast` - Fast production build (skips linting/type checking)
-- `pnpm start` - Start production server
-- `pnpm lint` - Run ESLint
-- `pnpm type-check` - Run TypeScript compiler
-- `pnpm clean` - Clean build cache
+All session content lives in `lib/data/sessions.ts`. Each entry declares its slug, title, copy, badge, gallery images, aspect ratio, and SEO metadata. The detail route generates one static page per entry via `generateStaticParams`, and `dynamicParams = false` means an unknown slug returns 404 instead of rendering on demand.
 
-## 🎨 Customization
+Because of that, adding a session requires no new route file: append an entry to `sessions` and the page, the sitemap, and the session index pick it up automatically.
 
-### Adding New Pages
+## Contact form flow
 
-1. Create a new file in `app/` directory
-2. Export a default component
-3. Add metadata for SEO
+`components/formspree-form.tsx` posts to `/api/contact`, which validates the payload, applies a per-IP rate limit, and forwards it to the Formspree endpoint from `FORMSPREE_ENDPOINT`. A hidden `_gotcha` field provides basic bot filtering. Delivery failures are surfaced to the user in a `role="alert"` container rather than being swallowed by a console log.
 
-```typescript
-export const metadata = {
-  title: 'Page Title',
-  description: 'Page description',
-};
+## Redirects
 
-export default function Page() {
-  return <div>Your content</div>;
-}
-```
+`next.config.mjs` keeps permanent (308) redirects for URLs merged during the SEO cleanup:
 
-### Adding Blog Posts
+- `/about` → `/sobre-nosotros`
+- `/sesiones/comuniones` → `/sesiones/comunion`
 
-1. Create a new `.mdx` file in `app/blog/[slug]/`
-2. Add frontmatter metadata
-3. Write your content in MDX
+## Deployment
 
-```mdx
----
-title: "Your Blog Post Title"
-publishedAt: "2024-01-01"
-summary: "Brief description"
-author: "Your Name"
----
+### Vercel
 
-Your blog content here...
-```
+1. Import the repository.
+2. Set `FORMSPREE_ENDPOINT` (and optionally `NEXT_PUBLIC_URL`) in the project environment variables.
+3. Deploy.
 
-### Modifying Styles
+### Self-hosting
 
-- Global styles: `app/globals.css`
-- Component styles: Use Tailwind classes
-- Theme colors: Update `tailwind.config.ts`
-
-## 🔧 Configuration
-
-### Environment Variables
-
-Create `.env.local`:
+The build uses `output: 'standalone'`, so `next start` is not the right entry point. Run:
 
 ```bash
-# Your environment variables
-NEXT_PUBLIC_API_URL=
-DATABASE_URL=
-# etc...
+node .next/standalone/server.js
 ```
 
-### Performance Optimizations
+Environment variables must be provided by the host (Docker, systemd, or similar); standalone output does not read `.env.local`.
 
-The template is pre-configured with:
+## Notes
 
-- Turbopack for fastest builds
-- Image optimization with AVIF/WebP
-- Font optimization with `next/font`
-- Aggressive code splitting
-- Partial prerendering
-- Edge runtime support
-
-## 📦 Tech Stack
-
-- **Framework**: Next.js 15
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Forms**: React Hook Form + Zod
-- **Icons**: Lucide React, Tabler Icons
-- **Blog**: MDX with Prism.js
-- **Theme**: next-themes
-
-## 🤖 AI Development
-
-This template includes `AI_RULES.md` which provides guidance for AI assistants when modifying the codebase. It ensures consistent code quality and maintains performance standards.
-
-## 📈 Best Practices
-
-1. **Use Server Components by default** - Only use Client Components when needed
-2. **Lazy load heavy components** - Use `dynamic()` for code splitting
-3. **Optimize images** - Always use `next/image`
-4. **Minimize client JS** - Keep interactivity server-side when possible
-5. **Cache aggressively** - Use proper cache headers
-
-## 🚢 Deployment
-
-### Vercel (Recommended)
-
-```bash
-vercel
-```
-
-### Other Platforms
-
-1. Build the project: `pnpm build`
-2. Start the server: `pnpm start`
-3. Ensure Node.js 18+ is available
-
-## 📝 License
-
-MIT - Use this template for any project!
-
----
-
-Built with ❤️ for developers who value speed and performance.
+- Images are optimized by `next/image`. Remote images are limited to `*.supabase.co` in `next.config.mjs`; add a host there before referencing it.
+- `X-Frame-Options: DENY` and the Content Security Policy are set in `next.config.mjs`. Any new third-party script, font, or frame origin must be added to the CSP or it will be blocked.

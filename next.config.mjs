@@ -1,5 +1,3 @@
-import path from "path";
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Standalone output for optimized Docker builds (~150MB vs 1.7GB)
@@ -15,8 +13,6 @@ const nextConfig = {
     // Optimize bundling
     optimizePackageImports: [
       "lucide-react",
-      "framer-motion",
-      "react-hook-form",
       "@radix-ui/react-label",
       "@radix-ui/react-slot"],
   },
@@ -29,23 +25,7 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "i.pravatar.cc",
-      },
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-      {
-        protocol: "https",
         hostname: "*.supabase.co",
-      },
-      {
-        protocol: "https",
-        hostname: "www.robot-speed.com",
-      },
-      {
-        protocol: "https",
-        hostname: "robot-speed.com",
       }],
     formats: ["image/avif", "image/webp"],
     // Use sharp for better performance
@@ -58,7 +38,7 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  // TypeScript configuration - Fail build on TS errors (run `pnpm type-check` locally first)
+  // TypeScript configuration - Fail build on TS errors (run `npm run type-check` locally first)
   typescript: {
     ignoreBuildErrors: false,
   },
@@ -75,23 +55,6 @@ const nextConfig = {
       process.env.NODE_ENV === "production"
         ? { properties: ["^data-testid$"] }
         : false,
-  },
-
-  // Force webpack to resolve @ aliases (in case tsconfig.json is not read)
-  webpack: (config, { _isServer, webpack, dev }) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      "@": path.resolve("."),
-      "@components": path.resolve("./components"),
-      "@lib": path.resolve("./lib"),
-      "@constants": path.resolve("./constants"),
-      "@context": path.resolve("./context"),
-    };
-
-    void dev;
-    void webpack;
-
-    return config;
   },
 
   // Headers
