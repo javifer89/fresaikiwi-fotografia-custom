@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import { IconAccesibilidad } from "@/components/LegalIcons";
+
+export const metadata: Metadata = {
+  title: "Declaración de Accesibilidad",
+  description:
+    "Declaración de accesibilidad del sitio de Fresaikiwi Fotografía conforme a WCAG 2.1 nivel AA y la norma UNE-EN 301 549:2022.",
+  alternates: { canonical: "/accesibilidad" },
+};
 
 export default function Accesibilidad() {
   return (
-    <main id="main" className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
+    <div className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <IconAccesibilidad className="w-14 h-14 mx-auto text-[var(--gris)]" aria-label="Accesibilidad" />
-        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'var(--gris)' }}>
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "var(--font-cormorant), serif", color: 'var(--gris)' }}>
           Declaración de Accesibilidad
         </h1>
       </div>
@@ -140,6 +148,6 @@ export default function Accesibilidad() {
           </a>
         </p>
       </article>
-    </main>
+    </div>
   );
 }

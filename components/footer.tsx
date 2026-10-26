@@ -132,19 +132,19 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: KIWI_LIGHT }} />
-                <span className="text-sm text-gray-400" style={{fontFamily: "'Roboto', sans-serif"}}>
+                <span className="text-sm text-gray-400" style={{fontFamily: "var(--font-roboto), sans-serif"}}>
                   C/ Constitución nº20, local izquierda, 03570 La Vila Joiosa, Alicante
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 flex-shrink-0" style={{ color: '#D4EAD7' }} />
-                <a href="tel:+34633520862" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "'Roboto', sans-serif"}}>
+                <a href="tel:+34633520862" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "var(--font-roboto), sans-serif"}}>
                   (+34) 633 52 08 62
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0" style={{ color: KIWI_LIGHT }} />
-                <a href="mailto:info@fresaikiwifotografia.com" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "'Roboto', sans-serif"}}>
+                <a href="mailto:info@fresaikiwifotografia.com" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "var(--font-roboto), sans-serif"}}>
                   info@fresaikiwifotografia.com
                 </a>
               </li>

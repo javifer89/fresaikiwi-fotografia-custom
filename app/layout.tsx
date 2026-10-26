@@ -1,15 +1,40 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 // Ignore missing type declarations for CSS modules in this project setup
 // @ts-ignore: Implicit any for CSS import
 import "./globals.css";
+import { Cormorant_Garamond, Roboto, Rouge_Script } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 import { NavBar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import { DevToolsGuard } from "./devtools-guard";
 import { CookieBanner } from "@/components/CookieBanner";
-import { ThemeProvider } from "next-themes";
 import { siteConfig } from "@/lib/site-config";
 
 const LOGO_URL = "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
+
+// Self-hosted by next/font: no request to fonts.googleapis.com, no layout shift.
+// The CSS variables are consumed by the inline fontFamily styles across the site.
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
+  display: "swap",
+});
+
+const rougeScript = Rouge_Script({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-rouge",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +59,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "es_ES",
     siteName: siteConfig.name,
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
@@ -55,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
-    creator: siteConfig.twitter,
+    ...(siteConfig.twitter ? { creator: siteConfig.twitter } : {}),
     ...(siteConfig.ogImage ? { images: [siteConfig.ogImage] } : {}),
   },
   metadataBase: (() => {
@@ -65,9 +90,6 @@ export const metadata: Metadata = {
       return new URL("https://localhost:3000");
     }
   })(),
-  alternates: {
-    canonical: "/",
-  },
   icons: {
     icon: LOGO_URL,
     shortcut: LOGO_URL,
@@ -76,23 +98,50 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
 };
 
+export const viewport: Viewport = {
+  colorScheme: "light dark",
+  themeColor: "#fdf8f4",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const showNavbar = siteConfig.showNavbar !== false;
+
   return (
-    <html lang="es" suppressHydrationWarning>
-      <head suppressHydrationWarning>
-        {/* Google Fonts: Cormorant Garamond (elegant serif) + Outfit (modern sans) */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Rouge+Script:wght@400;700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
-        {/* Enable light and dark color schemes */}
-        <meta name="color-scheme" content="light dark" />
-        <meta name="theme-color" content="#fdf8f4" />
-        {/* Theme provider for automatic dark mode support */}
-        <ThemeProvider defaultTheme="system" attribute="data-theme" />
+    <html
+      lang="es"
+      className={cn(cormorant.variable, roboto.variable, rougeScript.variable)}
+      suppressHydrationWarning
+    >
+      <body
+        className={cn("font-sans", "antialiased h-full w-full", "transition-colors")}
+        suppressHydrationWarning // Prevents browser extension conflicts
+      >
+        {/* ThemeProvider must live inside <body>: it renders a script, which is invalid inside <head>. */}
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <a
+            href="#main"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:shadow-lg"
+          >
+            Ir al contenido principal
+          </a>
+          <DevToolsGuard />
+          <CookieBanner />
+          {showNavbar && <NavBar />}
+          {/* Single <main> landmark for the whole app; pages render plain <div> wrappers. */}
+          <main id="main" className={showNavbar ? "pt-24" : ""}>
+            {children}
+          </main>
+          <Footer />
+        </ThemeProvider>
         {/* Schema.org: site metadata */}
         <script
           type="application/ld+json"
@@ -106,22 +155,6 @@ export default function RootLayout({
             }),
           }}
         />
-      </head>
-      <body
-        className={cn(
-          "font-sans",
-          "antialiased h-full w-full",
-          "transition-colors",
-        )}
-        suppressHydrationWarning // Prevents browser extension conflicts
-      >
-            <a href="#main" className="sr-only focus:focus-internal focus:outline-none">Ir al contenido principal</a>
-        <DevToolsGuard />
-        <CookieBanner />
-        <main className={siteConfig.showNavbar !== false ? "pt-24" : ""}>
-          {siteConfig.showNavbar !== false && <NavBar />}
-          {children}
-        </main>
       </body>
     </html>
   );

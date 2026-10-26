@@ -41,7 +41,7 @@
 /* CSS Custom Properties for design system */
 :root {
   /* Aceternity custom properties */
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
   --radius: 0.625rem;
 
   /* Brand colors - Fresaikiwi */

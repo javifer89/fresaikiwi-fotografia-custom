@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import { IconPrivacidad } from "@/components/LegalIcons";
+
+export const metadata: Metadata = {
+  title: "Política de privacidad",
+  description:
+    "Política de privacidad de Fresaikiwi Fotografía: qué datos tratamos, con qué finalidad y cómo ejercer tus derechos.",
+  alternates: { canonical: "/privacidad" },
+};
 
 export default function Privacidad() {
   return (
-    <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
+    <div className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <IconPrivacidad className="w-14 h-14 mx-auto text-[var(--fresa)]" aria-label="Política de privacidad" />
-        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'var(--gris)' }}>
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "var(--font-cormorant), serif", color: 'var(--gris)' }}>
           Política de Privacidad
         </h1>
       </div>
@@ -122,6 +130,6 @@ export default function Privacidad() {
 
         <p><strong>Contacto para consultas:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a> o la dirección indicada en el apartado 1.</p>
       </article>
-    </main>
+    </div>
   );
 }

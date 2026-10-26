@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import { IconAvisoLegal } from "@/components/LegalIcons";
+
+export const metadata: Metadata = {
+  title: "Aviso legal",
+  description:
+    "Aviso legal e información del titular del sitio web de Fresaikiwi Fotografía, estudio de fotografía en Villajoyosa, Alicante.",
+  alternates: { canonical: "/aviso-legal" },
+};
 
 export default function AvisoLegal() {
   return (
-    <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
+    <div className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <IconAvisoLegal className="w-14 h-14 mx-auto text-[var(--kiwi)]" aria-label="Aviso legal" />
-        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'var(--gris)' }}>
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "var(--font-cormorant), serif", color: 'var(--gris)' }}>
           Aviso Legal
         </h1>
       </div>
@@ -136,6 +144,6 @@ export default function AvisoLegal() {
 
         <p><strong>Contacto para consultas o reclamaciones:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a> o la dirección del apartado 1.</p>
       </article>
-    </main>
+    </div>
   );
 }

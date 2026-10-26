@@ -51,7 +51,7 @@ export function CookieBanner() {
         fontSize: "0.875rem",
         zIndex: 9999,
         borderTop: "1px solid #444",
-        fontFamily: "'Roboto', sans-serif",
+        fontFamily: "var(--font-roboto), sans-serif",
       }}
     >
       <p style={{ margin: 0 }}>

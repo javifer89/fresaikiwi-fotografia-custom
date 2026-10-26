@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import { IconCookies } from "@/components/LegalIcons";
+
+export const metadata: Metadata = {
+  title: "Política de cookies",
+  description:
+    "Política de cookies de Fresaikiwi Fotografía: qué cookies utilizamos y cómo gestionarlas desde tu navegador.",
+  alternates: { canonical: "/politica-de-cookies" },
+};
 
 export default function PoliticaCookies() {
   return (
-    <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
+    <div className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
       <div className="text-center mb-8">
         <IconCookies className="w-14 h-14 mx-auto text-[var(--kiwi)]" aria-label="Política de cookies" />
-        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "'Cormorant Garamond', serif", color: 'var(--gris)' }}>
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "var(--font-cormorant), serif", color: 'var(--gris)' }}>
           Política de Cookies
         </h1>
       </div>
@@ -125,6 +133,6 @@ export default function PoliticaCookies() {
 
         <p><strong>Contacto:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a></p>
       </article>
-    </main>
+    </div>
   );
 }

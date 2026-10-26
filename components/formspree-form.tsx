@@ -43,10 +43,12 @@ export function FormspreeForm({
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState<Record<string, string>>({});
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
+    setError(null);
 
     try {
       const payload = { ...formData, _gotcha: "" };
@@ -61,13 +63,26 @@ export function FormspreeForm({
       if (response.ok) {
         setSubmitted(true);
         setFormData({});
-        setTimeout(() => setSubmitted(false), 5000);
-      } else {
-        const error = await response.json();
-        console.error("Form submission error:", error);
+        return;
       }
-    } catch (error) {
-      console.error("Form submission error:", error);
+
+      // The route answers with { error: string }. Surfacing it is the whole point:
+      // console.error is stripped from production builds by next.config.mjs.
+      const data: unknown = await response.json().catch(() => null);
+      const apiError =
+        typeof data === "object" && data !== null && "error" in data
+          ? (data as { error?: unknown }).error
+          : undefined;
+
+      setError(
+        typeof apiError === "string" && apiError.length > 0
+          ? apiError
+          : "No pudimos enviar el formulario. Inténtalo de nuevo en unos minutos.",
+      );
+    } catch {
+      setError(
+        "No pudimos conectar con el servidor. Revisa tu conexión e inténtalo de nuevo.",
+      );
     } finally {
       setIsLoading(false);
     }
@@ -97,7 +112,13 @@ export function FormspreeForm({
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-6" data-webmcp="contacto" data-webmcp-schema="contactForm">
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6"
+            aria-busy={isLoading}
+            data-webmcp="contacto"
+            data-webmcp-schema="contactForm"
+          >
             {fields.map((field) => (
               <div key={field.name} className="space-y-2">
                 <Label htmlFor={field.name} className="text-base font-semibold">
@@ -145,6 +166,16 @@ export function FormspreeForm({
                 )}
               </div>
             ))}
+
+            {error && (
+              <div
+                role="alert"
+                aria-live="assertive"
+                className="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+              >
+                {error}
+              </div>
+            )}
 
             <Button
               type="submit"

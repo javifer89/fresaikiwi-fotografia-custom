@@ -100,9 +100,10 @@ const nextConfig = {
       {
         source: "/:path*",
         headers: [
-          { key: "X-Frame-Options", value: "ALLOWALL" },
+          // Must agree with the CSP frame-ancestors directive below.
+          // "ALLOWALL" is not a valid value and was silently ignored.
+          { key: "X-Frame-Options", value: "DENY" },
           { key: "X-Content-Type-Options", value: "nosniff" },
-          { key: "X-XSS-Protection", value: "1; mode=block" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
           {
@@ -110,8 +111,9 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com",
+              "style-src 'self' 'unsafe-inline'",
+              // Fonts are self-hosted by next/font, so no third-party font origin.
+              "font-src 'self'",
               "img-src 'self' data: https: blob:",
               "connect-src 'self' https://formspree.io https://rxdpvfeqdbenrlupzewy.supabase.co",
               "frame-src https://www.google.com https://ohmyphoto.app",
