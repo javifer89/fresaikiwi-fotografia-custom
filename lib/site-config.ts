@@ -82,14 +82,23 @@ export const siteConfig = {
   ] as { title: string; link: string }[],
 
   // SEO Keywords
-  keywords: ["fotografía Valencia", "sesión fotográfica", "embarazo", "newborn", "comunión", "fotógrafo Valencia"],
+  keywords: [
+    "fotografía Villajoyosa",
+    "sesión fotográfica Alicante",
+    "fotógrafa La Vila Joiosa",
+    "embarazo",
+    "newborn",
+    "comunión",
+    "sesión familiar",
+  ],
 
   // Author/Company
   author: "Fresaikiwi",
   company: "Fresaikiwi Fotografía",
 
   // Social
-  twitter: "@yourtwitter",
+  // Set to the real handle (e.g. "@fresaikiwi") to emit a twitter:creator tag.
+  twitter: "",
 
   // OG Image: set to a generated image URL for rich link previews
   ogImage: "",

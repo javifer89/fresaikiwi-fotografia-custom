@@ -124,6 +124,22 @@ const nextConfig = {
       },
     ];
   },
+
+  // URLs merged during the SEO cleanup: keep their ranking with a permanent redirect.
+  async redirects() {
+    return [
+      {
+        source: "/sesiones/comuniones",
+        destination: "/sesiones/comunion",
+        permanent: true,
+      },
+      {
+        source: "/about",
+        destination: "/sobre-nosotros",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 
