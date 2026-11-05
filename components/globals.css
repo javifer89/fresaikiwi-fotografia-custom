@@ -1,7 +1,0 @@
-
-:root {
-  --header-height: 80px;
-}
-main, section {
-  padding-top: var(--header-height);
-}

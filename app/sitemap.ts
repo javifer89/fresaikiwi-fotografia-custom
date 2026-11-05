@@ -1,34 +1,30 @@
 import { MetadataRoute } from "next";
+import { sessions } from "@/lib/data/sessions";
+import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_URL || "https://fresaikiwi-fotografia.com";
+  // Defensive: an env value with a trailing slash would produce "//" URLs.
+  const baseUrl = siteConfig.url.replace(/\/$/, "");
+  const lastModified = new Date();
 
-  // Add your static pages here
-  const staticPages = [
-    "",
-    // Uncomment pages as you enable them:
-    // '/pricing',
-    // '/blog',
-    // '/contact',
-    // '/login',
-    // '/signup',
+  const staticRoutes: MetadataRoute.Sitemap = [
+    { url: baseUrl, lastModified, changeFrequency: "monthly", priority: 1 },
+    { url: `${baseUrl}/sesiones`, lastModified, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/reservas`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/contacto`, lastModified, changeFrequency: "yearly", priority: 0.8 },
+    { url: `${baseUrl}/sobre-nosotros`, lastModified, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${baseUrl}/accesibilidad`, lastModified, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${baseUrl}/aviso-legal`, lastModified, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${baseUrl}/privacidad`, lastModified, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${baseUrl}/politica-de-cookies`, lastModified, changeFrequency: "yearly", priority: 0.2 },
   ];
 
-  const staticRoutes = staticPages.map((route) => ({
-    url: `${baseUrl}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: route === "" ? 1 : 0.8,
+  const sessionRoutes: MetadataRoute.Sitemap = sessions.map((session) => ({
+    url: `${baseUrl}/sesiones/${session.slug}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: 0.8,
   }));
 
-  // Add dynamic routes here (e.g., blog posts)
-  // const blogPosts = await getBlogPosts()
-  // const dynamicRoutes = blogPosts.map((post) => ({
-  //   url: `${baseUrl}/blog/${post.slug}`,
-  //   lastModified: post.updatedAt,
-  //   changeFrequency: 'weekly' as const,
-  //   priority: 0.6,
-  // }))
-
-  return [...staticRoutes];
+  return [...staticRoutes, ...sessionRoutes];
 }

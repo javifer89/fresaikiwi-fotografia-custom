@@ -1,9 +1,14 @@
-"use client";
-
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/container";
-import { Footer } from "@/components/footer";
 import { Heart, Camera, Sparkles } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Sobre nosotros",
+  description:
+    "Fresaikiwi Fotografía es un estudio en Villajoyosa especializado en sesiones de embarazo, newborn, comunión y familia. Conoce nuestra historia.",
+  alternates: { canonical: "/sobre-nosotros" },
+};
 
 const FRESA = "#E8A4A4";
 const FRESA_LIGHT = "#F5D5D5";
@@ -15,7 +20,7 @@ const GRIS = "#3D3D3D";
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen">
+    <div className="min-h-screen">
       {/* Our Story - sin hero */}
       <section className="py-16 md:py-24" style={{backgroundColor: CREMA}}>
         <Container>
@@ -26,7 +31,7 @@ export default function AboutPage() {
               </span>
               <h2 className="text-fluid-2xl font-bold mb-6" style={{fontFamily: "'Cormorant Garamond', serif", color: GRIS}}>
                 Fresaikiwi Fotografía
-              </h2>
+              </h1>
               <p className="text-lg leading-relaxed mb-6" style={{color: '#6B6B6B'}}>
                 Somos un estudio fotográfico ubicado en Villajoyosa, especializado en capturar los momentos más especiales de tu vida. Nuestro nombre, Fresaikiwi, refleja nuestra filosofía: la combinación perfecta entre dulzura y frescura.
               </p>
@@ -85,7 +90,6 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <Footer />
-    </main>
+    </div>
   );
 }

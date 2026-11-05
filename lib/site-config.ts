@@ -3,20 +3,102 @@
  * All metadata, OG images, and branding read from here automatically.
  */
 
+export interface HeroSlide {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+export const heroSlides: readonly HeroSlide[] = [
+  {
+    id: 1,
+    title: "Sesiones de Embarazo",
+    subtitle: "Captura la belleza de esta etapa única",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ALEJANDRI_9M-43.jpg"
+  },
+  {
+    id: 2,
+    title: "Comuniones y Celebraciones",
+    subtitle: "Recuerdos especiales para días únicos",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/CARLOTA_2ANYS-147.jpg"
+  },
+  {
+    id: 3,
+    title: "Exteriores y Familia",
+    subtitle: "Sesiones al aire libre llenas de luz",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EDURNE_EXTERIORS-135.jpg"
+  },
+  {
+    id: 4,
+    title: "Sesiones Infantiles",
+    subtitle: "La magia de la infancia en cada foto",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LAURA-1 copia.jpg"
+  },
+  {
+    id: 5,
+    title: "Retratos con Estilo",
+    subtitle: "Captura tu esencia y personalidad",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/MARC-41 copia.jpg"
+  },
+  {
+    id: 6,
+    title: "Sesiones Familiares",
+    subtitle: "Momentos en familia para siempre",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PAM_FAMILY-40.jpg"
+  },
+  {
+    id: 7,
+    title: "Decorados y Temáticas",
+    subtitle: "Creaciones únicas para cada sesión",
+    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PROBA_DECORAT-22 copia 2.jpg"
+  }
+] as const;
+
 export const siteConfig = {
   // Basic Info
   name: "Fresaikiwi Fotografía",
   tagline: "Capturando momentos irrepetibles",
   description:
     "Estudio de fotografía especializado en sesiones de embarazo, newborn, comuniones, bodas y sesiones familiares en Villajoyosa. Cada imagen cuenta una historia única.",
-  
+
+  // Brand asset. Served from the public bucket until it moves to /public.
+  logo: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png",
+
   // Contact Info
   phone: "633 52 08 62",
   email: "info@fresaikiwifotografia.com",
   address: "Villajoyosa, Alicante",
 
+  // Local business data. Structured data and NAP citations read from here,
+  // so this block must match the Google Business Profile exactly.
+  business: {
+    street: "C/ Constitución nº20, local izquierda",
+    postalCode: "03570",
+    city: "La Vila Joiosa",
+    region: "Alicante",
+    country: "ES",
+    // Coordinates of the studio's Google Maps place.
+    latitude: 38.50848851283724,
+    longitude: -0.23027608422429072,
+    priceRange: "€€",
+    // Lunes a viernes 10:00-19:00, sábados 10:00-14:00.
+    openingHours: [
+      {
+        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "10:00",
+        closes: "19:00",
+      },
+      { days: ["Saturday"], opens: "10:00", closes: "14:00" },
+    ] as { days: string[]; opens: string; closes: string }[],
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Fresaikiwi+Fotograf%C3%ADa+La+Vila+Joiosa",
+    instagram: "https://www.instagram.com/fresaikiwi_fotografia/",
+    facebook: "https://www.facebook.com/fresaikiwi.fotografia.3",
+  },
+
   // Site URL (replaced automatically on deploy)
-  url: process.env.NEXT_PUBLIC_URL || "https://fresaikiwi-fotografia.com",
+  url: process.env.NEXT_PUBLIC_URL || "https://fresaikiwifotografia.com",
 
   // Layout: navbar is hidden by default. Set to true for marketing/landing sites.
   showNavbar: true,
@@ -30,14 +112,23 @@ export const siteConfig = {
   ] as { title: string; link: string }[],
 
   // SEO Keywords
-  keywords: ["fotografía Valencia", "sesión fotográfica", "embarazo", "newborn", "comunión", "fotógrafo Valencia"],
+  keywords: [
+    "fotografía Villajoyosa",
+    "sesión fotográfica Alicante",
+    "fotógrafa La Vila Joiosa",
+    "embarazo",
+    "newborn",
+    "comunión",
+    "sesión familiar",
+  ],
 
   // Author/Company
   author: "Fresaikiwi",
   company: "Fresaikiwi Fotografía",
 
   // Social
-  twitter: "@yourtwitter",
+  // Set to the real handle (e.g. "@fresaikiwi") to emit a twitter:creator tag.
+  twitter: "",
 
   // OG Image: set to a generated image URL for rich link previews
   ogImage: "",

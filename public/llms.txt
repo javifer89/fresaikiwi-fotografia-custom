@@ -1,4 +1,4 @@
-# froola.com – Política de rastreo
+# Fresaikiwi Fotografía – Política de rastreo
 
 Este sitio web está abierto a indexación por parte de motores de búsqueda y herramientas de IA con fines de investigación y mejora de servicios. No queremos que el contenido se use para entrenar modelos comerciales sin consentimiento.
 
@@ -12,4 +12,4 @@ Si deseas usar partes de este sitio, contacta mediante el formulario de contacto
 
 ## Enlaces de interés
 
-- [Sitio web oficial](https://fresaikiwi-fotografia.com)
+- [Sitio web oficial](https://fresaikiwifotografia.com)

@@ -1,24 +1,28 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { IconCookies } from "@/components/LegalIcons";
+
+export const metadata: Metadata = {
+  title: "Política de cookies",
+  description:
+    "Política de cookies de Fresaikiwi Fotografía: qué cookies utilizamos y cómo gestionarlas desde tu navegador.",
+  alternates: { canonical: "/politica-de-cookies" },
+};
 
 export default function PoliticaCookies() {
   return (
-    <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
-      <Image
-        src="/images/cookies.svg"
-        alt="Política de cookies"
-        width={200}
-        height={200}
-        loading="lazy"
-        className="mx-auto mb-6"
-      />
+    <div className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
+      <div className="text-center mb-8">
+        <IconCookies className="w-14 h-14 mx-auto text-[var(--kiwi)]" aria-label="Política de cookies" />
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "var(--font-cormorant), serif", color: 'var(--gris)' }}>
+          Política de Cookies
+        </h1>
+      </div>
       <article className="prose lg:prose-xl text-left">
-        <h1 className="text-3xl font-bold mb-4">Política de Cookies</h1>
 
-        <p><strong>Última actualización:</strong> [día] de [mes] de [año]</p>
+        <p><strong>Última actualización:</strong> 11 de septiembre de 2026</p>
 
         <p>
-          En
-          <strong>[Nombre de tu empresa]</strong> utilizamos cookies y tecnologías
+          En <strong>Fresaikiwi Fotografía</strong> utilizamos cookies y tecnologías
           similares para mejorar la experiencia del usuario, analizar el tráfico
           y mostrar publicidad personalizada. A continuación, te explicamos qué
           son, qué tipos utilizamos y cómo puedes configurarlas.
@@ -127,8 +131,8 @@ export default function PoliticaCookies() {
           para la correcta visualización del sitio.
         </p>
 
-        <p><strong>Contacto:</strong> <a href="mailto:info@tudominio.com">info@tudominio.com</a></p>
+        <p><strong>Contacto:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a></p>
       </article>
-    </main>
+    </div>
   );
 }

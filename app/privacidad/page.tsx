@@ -1,27 +1,32 @@
-import Image from "next/image";
+import type { Metadata } from "next";
+import { IconPrivacidad } from "@/components/LegalIcons";
+
+export const metadata: Metadata = {
+  title: "Política de privacidad",
+  description:
+    "Política de privacidad de Fresaikiwi Fotografía: qué datos tratamos, con qué finalidad y cómo ejercer tus derechos.",
+  alternates: { canonical: "/privacidad" },
+};
 
 export default function Privacidad() {
   return (
-    <main className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
-      <Image
-        src="/images/privacidad.svg"
-        alt="Política de privacidad"
-        width={200}
-        height={200}
-        loading="lazy"
-        className="mx-auto mb-6"
-      />
+    <div className="py-12 px-4 md:px-8 max-w-2xl mx-auto">
+      <div className="text-center mb-8">
+        <IconPrivacidad className="w-14 h-14 mx-auto text-[var(--fresa)]" aria-label="Política de privacidad" />
+        <h1 className="text-3xl font-bold mt-4" style={{ fontFamily: "var(--font-cormorant), serif", color: 'var(--gris)' }}>
+          Política de Privacidad
+        </h1>
+      </div>
       <article className="prose lg:prose-xl text-left">
-        <h1 className="text-3xl font-bold mb-4">Política de Privacidad</h1>
 
-        <p><strong>Última actualización:</strong> [día] de [mes] de [año]</p>
+        <p><strong>Última actualización:</strong> 11 de septiembre de 2026</p>
 
         <h2 className="text-2xl font-semibold mt-6">1. Responsable del tratamiento</h2>
         <p>
-          <strong>Nombre / Razón social:</strong> [Tu empresa]<br />
-          <strong>Domicilio:</strong> [Dirección completa]<br />
-          <strong>Correo electrónico:</strong> <a href="mailto:info@tudominio.com">info@tudominio.com</a><br />
-          <strong>Teléfono:</strong> [Número de contacto]
+          <strong>Nombre / Razón social:</strong> Fresaikiwi Fotografía<br />
+          <strong>Domicilio:</strong> C/ Constitución nº20, local izquierda, 03570 La Vila Joiosa, Alicante<br />
+          <strong>Correo electrónico:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a><br />
+          <strong>Teléfono:</strong> (+34) 633 52 08 62
         </p>
 
         <h2 className="text-2xl font-semibold mt-6">2. Datos que recopilamos</h2>
@@ -123,8 +128,8 @@ export default function Privacidad() {
           Publicaremos cualquier modificación en esta página y, cuando sea necesario, te notificaremos por correo electrónico o dentro del propio sitio. Te sugerimos revisar esta sección periódicamente.
         </p>
 
-        <p><strong>Contacto para consultas:</strong> <a href="mailto:protecciondatos@tudominio.com">protecciondatos@tudominio.com</a> o la dirección indicada en el apartado 1.</p>
+        <p><strong>Contacto para consultas:</strong> <a href="mailto:info@fresaikiwifotografia.com">info@fresaikiwifotografia.com</a> o la dirección indicada en el apartado 1.</p>
       </article>
-    </main>
+    </div>
   );
 }

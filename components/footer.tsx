@@ -3,9 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
-
-const LOGO_SRC =
-  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
+import { sessions } from "@/lib/data/sessions";
+import { siteConfig } from "@/lib/site-config";
 
 const FRESA = "#E8A4A4";
 const FRESA_LIGHT = "#F5D5D5";
@@ -25,7 +24,7 @@ export function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
-                src={LOGO_SRC}
+                src={siteConfig.logo}
                 alt="Fresaikiwi Fotografía"
                 width={160}
                 height={80}
@@ -96,31 +95,13 @@ export function Footer() {
               Sesiones
             </h4>
             <ul className="space-y-3">
-              <li>
-                <Link href="/sesiones/embarazo" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Embarazo
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/newborn" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Newborn
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/comunion" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Comunión
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/familia" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Familia
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/navidad" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Navidad
-                </Link>
-              </li>
+              {sessions.map((session) => (
+                <li key={session.slug}>
+                  <Link href={`/sesiones/${session.slug}`} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {session.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -132,19 +113,19 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: KIWI_LIGHT }} />
-                <span className="text-sm text-gray-400" style={{fontFamily: "'Roboto', sans-serif"}}>
+                <span className="text-sm text-gray-400" style={{fontFamily: "var(--font-roboto), sans-serif"}}>
                   C/ Constitución nº20, local izquierda, 03570 La Vila Joiosa, Alicante
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 flex-shrink-0" style={{ color: '#D4EAD7' }} />
-                <a href="tel:+34633520862" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "'Roboto', sans-serif"}}>
+                <a href="tel:+34633520862" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "var(--font-roboto), sans-serif"}}>
                   (+34) 633 52 08 62
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 flex-shrink-0" style={{ color: KIWI_LIGHT }} />
-                <a href="mailto:info@fresaikiwifotografia.com" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "'Roboto', sans-serif"}}>
+                <a href="mailto:info@fresaikiwifotografia.com" className="text-sm text-gray-400 hover:text-white transition-colors" style={{fontFamily: "var(--font-roboto), sans-serif"}}>
                   info@fresaikiwifotografia.com
                 </a>
               </li>

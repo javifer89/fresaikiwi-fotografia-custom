@@ -4,6 +4,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Heart, Star, Camera, Users, Gift, Music, Crown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { sessionsForFilters } from "@/lib/data/sessions";
+
+const iconComponents = {
+  Heart,
+  Star,
+  Camera,
+  Users,
+  Gift,
+  Music,
+  Crown,
+} as const;
 
 type FilterOption = {
   value: string;
@@ -38,26 +49,29 @@ export function SessionFilters() {
                 ? "bg-[var(--fresa)] text-white"
                 : "text-[var(--gris)] hover:bg-gray-100",
             )}
-            style={{ color: currentSlug === "all" || currentSlug === "" ? "white" : "#3D3D3D" }}
+            style={{ color: currentSlug === "all" || currentSlug === "" ? "white" : "var(--gris)" }}
           >
             Todas
           </Link>
-          {filterOptions.map((option) => (
-            <Link
-              key={option.value}
-              href={`/sesiones/${option.value}`}
-              className={cn(
-                "px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5",
-                currentSlug === option.value
-                  ? "bg-[var(--fresa)] text-white"
-                  : "text-[var(--gris)] hover:bg-gray-100",
-              )}
-              style={{ color: currentSlug === option.value ? "white" : "#3D3D3D" }}
-            >
-              <option.icon className="w-3.5 h-3.5" />
-              {option.label}
-            </Link>
-          ))}
+          {sessionsForFilters.map((option) => {
+            const Icon = iconComponents[option.iconName];
+            return (
+              <Link
+                key={option.value}
+                href={`/sesiones/${option.value}`}
+                className={cn(
+                  "px-4 py-2 rounded-full text-sm font-medium transition-all flex items-center gap-1.5",
+                  currentSlug === option.value
+                    ? "bg-[var(--fresa)] text-white"
+                    : "text-[var(--gris)] hover:bg-gray-100",
+                )}
+                style={{ color: currentSlug === option.value ? "white" : "var(--gris)" }}
+              >
+                <Icon className="w-3.5 h-3.5" />
+                {option.label}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>

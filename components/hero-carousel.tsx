@@ -3,51 +3,12 @@
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { heroSlides } from "@/lib/site-config";
 
-const slides = [
-  {
-    id: 1,
-    title: "Sesiones de Embarazo",
-    subtitle: "Captura la belleza de esta etapa única",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/ALEJANDRI_9M-43.jpg"
-  },
-  {
-    id: 2,
-    title: "Comuniones y Celebraciones",
-    subtitle: "Recuerdos especiales para días únicos",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/CARLOTA_2ANYS-147.jpg"
-  },
-  {
-    id: 3,
-    title: "Exteriores y Familia",
-    subtitle: "Sesiones al aire libre llenas de luz",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/EDURNE_EXTERIORS-135.jpg"
-  },
-  {
-    id: 4,
-    title: "Sesiones Infantiles",
-    subtitle: "La magia de la infancia en cada foto",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LAURA-1 copia.jpg"
-  },
-  {
-    id: 5,
-    title: "Retratos con Estilo",
-    subtitle: "Captura tu esencia y personalidad",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/MARC-41 copia.jpg"
-  },
-  {
-    id: 6,
-    title: "Sesiones Familiares",
-    subtitle: "Momentos en familia para siempre",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PAM_FAMILY-40.jpg"
-  },
-  {
-    id: 7,
-    title: "Decorados y Temáticas",
-    subtitle: "Creaciones únicas para cada sesión",
-    image: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/PROBA_DECORAT-22 copia 2.jpg"
-  }
-];
+const slides = heroSlides;
+
+// Tiny 10x10 blurred placeholder (base64 data URL) - generic neutral blur
+const BLUR_PLACEHOLDER = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/AB//2Q==";
 
 export function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -122,7 +83,10 @@ export function HeroCarousel() {
               alt={slide.title}
               fill
               sizes="100vw"
-              priority={index === 0} fetchPriority={index === 0 ? "high" : undefined}
+              priority={index === 0}
+              fetchPriority={index === 0 ? "high" : undefined}
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
               className="object-cover"
             />
           </div>
