@@ -61,7 +61,7 @@ export function SessionsGrid() {
                   <div className={`relative ${isLarge ? 'aspect-square' : 'aspect-square'}`}>
                     <Image
                       src={session.image}
-                      alt={session.name}
+                      alt={session.imageAlt}
                       fill
                       sizes="(min-width: 768px) 25vw, 50vw"
                       placeholder="blur"

@@ -62,10 +62,40 @@ export const siteConfig = {
   description:
     "Estudio de fotografía especializado en sesiones de embarazo, newborn, comuniones, bodas y sesiones familiares en Villajoyosa. Cada imagen cuenta una historia única.",
 
+  // Brand asset. Served from the public bucket until it moves to /public.
+  logo: "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png",
+
   // Contact Info
   phone: "633 52 08 62",
   email: "info@fresaikiwifotografia.com",
   address: "Villajoyosa, Alicante",
+
+  // Local business data. Structured data and NAP citations read from here,
+  // so this block must match the Google Business Profile exactly.
+  business: {
+    street: "C/ Constitución nº20, local izquierda",
+    postalCode: "03570",
+    city: "La Vila Joiosa",
+    region: "Alicante",
+    country: "ES",
+    // Coordinates of the studio's Google Maps place.
+    latitude: 38.50848851283724,
+    longitude: -0.23027608422429072,
+    priceRange: "€€",
+    // Lunes a viernes 10:00-19:00, sábados 10:00-14:00.
+    openingHours: [
+      {
+        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "10:00",
+        closes: "19:00",
+      },
+      { days: ["Saturday"], opens: "10:00", closes: "14:00" },
+    ] as { days: string[]; opens: string; closes: string }[],
+    mapUrl:
+      "https://www.google.com/maps/search/?api=1&query=Fresaikiwi+Fotograf%C3%ADa+La+Vila+Joiosa",
+    instagram: "https://www.instagram.com/fresaikiwi_fotografia/",
+    facebook: "https://www.facebook.com/fresaikiwi.fotografia.3",
+  },
 
   // Site URL (replaced automatically on deploy)
   url: process.env.NEXT_PUBLIC_URL || "https://fresaikiwifotografia.com",

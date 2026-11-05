@@ -10,8 +10,7 @@ import { Footer } from "@/components/footer";
 import { DevToolsGuard } from "./devtools-guard";
 import { CookieBanner } from "@/components/CookieBanner";
 import { siteConfig } from "@/lib/site-config";
-
-const LOGO_URL = "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
+import { buildStructuredData } from "@/lib/structured-data";
 
 // Self-hosted by next/font: no request to fonts.googleapis.com, no layout shift.
 // The CSS variables are consumed by the inline fontFamily styles across the site.
@@ -91,9 +90,9 @@ export const metadata: Metadata = {
     }
   })(),
   icons: {
-    icon: LOGO_URL,
-    shortcut: LOGO_URL,
-    apple: LOGO_URL,
+    icon: siteConfig.logo,
+    shortcut: siteConfig.logo,
+    apple: siteConfig.logo,
   },
   manifest: "/site.webmanifest",
 };
@@ -142,17 +141,11 @@ export default function RootLayout({
           </main>
           <Footer />
         </ThemeProvider>
-        {/* Schema.org: site metadata */}
+        {/* Schema.org: WebSite + PhotographyBusiness (NAP, hours, service area). */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: siteConfig.name,
-              url: siteConfig.url,
-              description: siteConfig.description,
-            }),
+            __html: JSON.stringify(buildStructuredData()).replace(/</g, "\\u003c"),
           }}
         />
       </body>

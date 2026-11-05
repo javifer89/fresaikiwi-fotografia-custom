@@ -96,7 +96,7 @@ export const sessions: readonly SessionData[] = [
       { src: `${ASSETS}/GONZALO_NB-103 copia.jpg`, alt: "Sesión newborn en Villajoyosa, foto 3" },
       { src: `${ASSETS}/MIA_NB-18 copia.jpg`, alt: "Sesión newborn en Villajoyosa, foto 4" },
     ],
-    seoTitle: "Sesión newborn de recién nacido",
+    seoTitle: "Sesión newborn en Villajoyosa",
     seoDescription:
       "Sesión newborn para recién nacidos: 3-4 horas con pausas, 40 fotografías editadas y props incluidos. Estudio en Villajoyosa, Alicante.",
   },
@@ -125,7 +125,7 @@ export const sessions: readonly SessionData[] = [
       { src: `${ASSETS}/TRISTAN-209.jpg`, alt: "Sesión de cumpleaños y cakesmash, foto 3", unoptimized: true },
       { src: `${ASSETS}/EMMA%201%20copia.jpg`, alt: "Sesión de cumpleaños y cakesmash, foto 4", unoptimized: true },
     ],
-    seoTitle: "Sesión de cumpleaños y cakesmash",
+    seoTitle: "Cumpleaños y cakesmash en Villajoyosa",
     seoDescription:
       "Sesión de cumpleaños con decoración temática en Villajoyosa: 1-2 horas, 20 fotografías editadas y cakesmash opcional.",
   },
@@ -153,7 +153,7 @@ export const sessions: readonly SessionData[] = [
       { src: `${ASSETS}/SYRA_EXTERIORS-69 copia.jpg`, alt: "Sesión de comunión en exterior, foto 3" },
       { src: `${ASSETS}/SYRA_EXTERIORS-110.jpg`, alt: "Sesión de comunión en exterior, foto 4" },
     ],
-    seoTitle: "Sesión de comunión en exterior",
+    seoTitle: "Sesión de comunión en Villajoyosa",
     seoDescription:
       "Sesión de comunión en exterior: 2-3 horas, 50 fotografías editadas y asesoramiento de vestuario. Fotógrafa en Villajoyosa, Alicante.",
   },
@@ -182,7 +182,7 @@ export const sessions: readonly SessionData[] = [
       { src: `${ASSETS}/EMMA_ELFA-1%20copia%20%281%29.jpg`, alt: "Sesión de Navidad en estudio, foto 3", unoptimized: true },
       { src: `${ASSETS}/PROBA_DECORAT-22%20copia%202%20%281%29.jpg`, alt: "Sesión de Navidad en estudio, foto 4", unoptimized: true },
     ],
-    seoTitle: "Sesión de Navidad con set decorado",
+    seoTitle: "Sesión de Navidad en Villajoyosa",
     seoDescription:
       "Sesión de Navidad con set decorado: 1 hora, 15 fotografías editadas y opción de impresiones. Estudio en Villajoyosa, Alicante.",
   },
@@ -206,7 +206,7 @@ export const sessions: readonly SessionData[] = [
     ],
     gallery: [],
     heroImage: { src: `${ASSETS}/PAM_FAMILY-40.jpg`, alt: "Sesión de familia en exterior" },
-    seoTitle: "Sesión de familia en estudio o exterior",
+    seoTitle: "Sesión de familia en Villajoyosa",
     seoDescription:
       "Sesión de familia en estudio o exterior: 1,5 horas, 25 fotografías editadas y poses naturales. Villajoyosa, Alicante.",
   },
@@ -233,9 +233,9 @@ export const sessions: readonly SessionData[] = [
       src: "https://lrggyvioreorxttbasgi.supabase.co/storage/v1/object/public/app-assets/15730/images/1775852254429-sesion-musical.jpg",
       alt: "Sesión musical para artistas y performers",
     },
-    seoTitle: "Sesión musical y portfolio artístico",
+    seoTitle: "Sesión musical en Villajoyosa",
     seoDescription:
-      "Sesión musical para artistas y performers: 1,5 horas, 25 fotografías editadas, iluminación teatral y asesoramiento de poses.",
+      "Sesión musical para artistas y performers en Villajoyosa (Alicante): 1,5 horas, 25 fotografías editadas, iluminación teatral y asesoramiento de poses.",
   },
   {
     name: "Moros y Cristianos",
@@ -257,7 +257,7 @@ export const sessions: readonly SessionData[] = [
     ],
     gallery: [],
     heroImage: { src: `${ASSETS}/ROSA_CAPI-1.jpg`, alt: "Sesión de Moros y Cristianos con traje típico" },
-    seoTitle: "Sesión de Moros y Cristianos",
+    seoTitle: "Moros y Cristianos en Villajoyosa",
     seoDescription:
       "Sesión de Moros y Cristianos: 1,5 horas, 20 fotografías editadas y galería privada online. Villajoyosa, Alicante.",
   },

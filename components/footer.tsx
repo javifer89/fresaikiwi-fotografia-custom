@@ -3,9 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
-
-const LOGO_SRC =
-  "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
+import { sessions } from "@/lib/data/sessions";
+import { siteConfig } from "@/lib/site-config";
 
 const FRESA = "#E8A4A4";
 const FRESA_LIGHT = "#F5D5D5";
@@ -25,7 +24,7 @@ export function Footer() {
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">
               <Image
-                src={LOGO_SRC}
+                src={siteConfig.logo}
                 alt="Fresaikiwi Fotografía"
                 width={160}
                 height={80}
@@ -96,31 +95,13 @@ export function Footer() {
               Sesiones
             </h4>
             <ul className="space-y-3">
-              <li>
-                <Link href="/sesiones/embarazo" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Embarazo
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/newborn" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Newborn
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/comunion" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Comunión
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/familia" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Familia
-                </Link>
-              </li>
-              <li>
-                <Link href="/sesiones/navidad" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  Navidad
-                </Link>
-              </li>
+              {sessions.map((session) => (
+                <li key={session.slug}>
+                  <Link href={`/sesiones/${session.slug}`} className="text-sm text-gray-400 hover:text-white transition-colors">
+                    {session.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
