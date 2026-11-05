@@ -9,24 +9,6 @@ import { sessionsForNav } from "@/lib/data/sessions";
 const LOGO_SRC =
   "https://rxdpvfeqdbenrlupzewy.supabase.co/storage/v1/object/public/assets/LOGO_WEB.png";
 
-const FRESA = "#E8A4A4";
-const FRESA_DARK = "#D48888";
-const FRESA_LIGHT = "#F5D5D5";
-const KIWI = "#7BAE7F";
-const KIWI_LIGHT = "#D4EAD7";
-const GRIS = "#3D3D3D";
-
-const sessions = [
-  { name: "Embarazo", slug: "embarazo" },
-  { name: "Newborn", slug: "newborn" },
-  { name: "Cumpleaños", slug: "cumpleanos" },
-  { name: "Comunión", slug: "comunion" },
-  { name: "Navidad", slug: "navidad" },
-  { name: "Familia", slug: "familia" },
-  //{ name: "Musical", slug: "musical" },
- // { name: "Moros y Cristianos", slug: "moros-y-cristianos" },
-];
-
 export function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [sessionsDropdownOpen, setSessionsDropdownOpen] = useState(false);
@@ -105,7 +87,7 @@ export function NavBar() {
 
             <a
               href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
-              className="inline-flex items-center rounded-full bg-[#7BAE7F] text-white py-2 px-5 text-sm font-medium transition-colors hover:scale-105 shadow-md"
+              className="inline-flex items-center rounded-full bg-[var(--kiwi)] text-white py-2 px-5 text-sm font-medium transition-colors hover:scale-105 shadow-md"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -118,8 +100,8 @@ export function NavBar() {
                 className="w-5 h-5 mr-2"
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5
-     3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392
-     0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+ 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392
+ 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
               </svg>
               WhatsApp
             </a>
@@ -145,7 +127,7 @@ export function NavBar() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t pt-4" style={{ borderColor: FRESA_LIGHT }}>
+          <div className="md:hidden mt-4 pb-4 border-t pt-4" style={{ borderColor: 'var(--fresa-light)' }}>
             <div className="flex flex-col gap-2">
               <Link
                 href="/sobre-nosotros"
@@ -166,7 +148,7 @@ export function NavBar() {
                       key={session.slug}
                       href={`/sesiones/${session.slug}`}
                       className="py-1 text-sm rounded-lg transition-colors"
-                      style={{ color: GRIS }}
+                      style={{ color: 'var(--gris)' }}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {session.name}
@@ -178,7 +160,7 @@ export function NavBar() {
               <Link
                 href="/reservas"
                 className="py-2 px-4 rounded-lg text-sm font-medium text-center"
-                style={{ backgroundColor: FRESA, color: 'white' }}
+                style={{ backgroundColor: 'var(--fresa)', color: 'white' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {/* Reservas */} Navidad 2026
@@ -187,7 +169,7 @@ export function NavBar() {
               <a
                 href={whatsappUrl("Hola! Me interesa reservar una sesión fotográfica")}
                 className="py-2 px-4 rounded-lg text-sm font-medium text-center"
-                style={{ backgroundColor: '#7BAE7F', color: 'white' }}
+                style={{ backgroundColor: 'var(--kiwi)', color: 'white' }}
                 target="_blank"
                 rel="noopener noreferrer"
               >

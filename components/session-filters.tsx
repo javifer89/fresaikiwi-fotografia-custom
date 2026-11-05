@@ -16,23 +16,6 @@ const iconComponents = {
   Crown,
 } as const;
 
-type FilterOption = {
-  value: string;
-  label: string;
-  icon: React.ComponentType<{ className?: string }>;
-};
-
-const filterOptions: FilterOption[] = [
-  { value: "embarazo", label: "Embarazo", icon: Heart },
-  { value: "newborn", label: "Newborn", icon: Star },
-  { value: "cumpleanos", label: "Cumpleaños", icon: Gift },
-  { value: "comunion", label: "Comunión", icon: Crown },
-  { value: "navidad", label: "Navidad", icon: Star },
-  { value: "familia", label: "Familia", icon: Users },
-  //{ value: "musical", label: "Musical", icon: Music },
-  //{ value: "moros-y-cristianos", label: "Moros y Cristianos", icon: Camera },
-];
-
 export function SessionFilters() {
   const pathname = usePathname();
   const currentSlug = pathname.split("/sesiones/")[1] || "all";

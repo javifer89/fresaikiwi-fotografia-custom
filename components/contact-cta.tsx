@@ -21,8 +21,8 @@ export function ContactCTA() {
             ¿Listo para tu sesión?
           </span>
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ fontFamily: "'Rouge Script', cursive", color: '#3D3D3D' }}
+            className="text-fluid-2xl font-bold mb-4"
+            style={{ fontFamily: "var(--font-rouge), cursive", color: '#3D3D3D' }}
           >
             Reserve su momento especial
           </h2>

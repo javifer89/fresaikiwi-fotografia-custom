@@ -22,7 +22,7 @@ export default function ContactoPage() {
       {/* Contact Section */}
       <section className="py-16" style={{backgroundColor: CREMA}}>
         <Container>
-          <h1 className="text-fluid-2xl font-bold text-center mb-4" style={{fontFamily: "'Rouge Script', cursive", color: '#3D3D3D'}}>
+          <h1 className="text-fluid-2xl font-bold text-center mb-4" style={{fontFamily: "var(--font-rouge), cursive", color: '#3D3D3D'}}>
             Contacto
           </h1>
           <p className="text-center text-gray-600 mb-12" style={{fontFamily: "var(--font-roboto), sans-serif"}}>

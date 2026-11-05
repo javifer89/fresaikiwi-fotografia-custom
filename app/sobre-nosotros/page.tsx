@@ -29,7 +29,7 @@ export default function AboutPage() {
               <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full" style={{backgroundColor: FRESA_LIGHT, color: FRESA_DARK}}>
                 Nuestra Historia
               </span>
-              <h2 className="text-fluid-2xl font-bold mb-6" style={{fontFamily: "'Cormorant Garamond', serif", color: GRIS}}>
+              <h1 className="text-fluid-2xl font-bold mb-6" style={{fontFamily: "var(--font-cormorant), serif", color: GRIS}}>
                 Fresaikiwi Fotografía
               </h1>
               <p className="text-lg leading-relaxed mb-6" style={{color: '#6B6B6B'}}>
@@ -60,7 +60,7 @@ export default function AboutPage() {
       <section className="py-20">
         <Container>
           <div className="text-center mb-16">
-            <h2 className="text-fluid-2xl font-bold mb-4" style={{fontFamily: "'Cormorant Garamond', serif", color: '#3D3D3D'}}>
+            <h2 className="text-fluid-2xl font-bold mb-4" style={{fontFamily: "var(--font-cormorant), serif", color: '#3D3D3D'}}>
               Nuestros Valores
             </h2>
           </div>
