@@ -31,7 +31,7 @@ export default function Home() {
             className="mb-4 text-4xl font-bold md:text-5xl"
             style={{ fontFamily: "var(--font-cormorant), serif", color: "var(--gris)" }}
           >
-            Fotógrafo de embarazo, newborn y familia en Villajoyosa
+            Fotografía de embarazo, newborn y familia en La Vila Joiosa
           </h1>
           <p
             className="text-lg leading-relaxed"
