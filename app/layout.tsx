@@ -7,6 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { cn } from "@/lib/utils";
 import { NavBar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
+import { WhatsAppFab } from "@/components/whatsapp-fab";
 import { DevToolsGuard } from "./devtools-guard";
 import { CookieBanner } from "@/components/CookieBanner";
 import { siteConfig } from "@/lib/site-config";
@@ -119,6 +120,17 @@ export default function RootLayout({
         className={cn("font-sans", "antialiased h-full w-full", "transition-colors")}
         suppressHydrationWarning // Prevents browser extension conflicts
       >
+        {/*
+          Enables the hidden pre-animation state only when the browser can run the
+          reveal observers. Without this class every block renders in its final
+          state, so the content stays visible with JavaScript disabled.
+        */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{if('IntersectionObserver' in window){document.documentElement.classList.add('reveal-ready')}}catch(e){}",
+          }}
+        />
         {/* ThemeProvider must live inside <body>: it renders a script, which is invalid inside <head>. */}
         <ThemeProvider
           attribute="data-theme"
@@ -140,6 +152,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <WhatsAppFab />
         </ThemeProvider>
         {/* Schema.org: WebSite + PhotographyBusiness (NAP, hours, service area). */}
         <script

@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Heart, Star, Camera, Users, Gift, Music, Crown, ExternalLink } from "lucide-react";
 import { sessions } from "@/lib/data/sessions";
+import { Reveal } from "@/components/reveal";
+import { WordsReveal } from "@/components/words-reveal";
 
 // Tiny 10x10 blurred placeholder for session images
 const BLUR_PLACEHOLDER = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAn/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwA/AB//2Q==";
@@ -23,21 +25,21 @@ export function SessionsGrid() {
     <section className="py-24 px-4 md:px-8" style={{ backgroundColor: 'var(--crema)' }}>
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full"
                 style={{ backgroundColor: 'var(--fresa-light)', color: 'var(--fresa-dark)' }}>
             Nuestras Sesiones
           </span>
-          <h2
+          <WordsReveal
+            text="Cada momento merece su historia"
+            emphasis={["su", "historia"]}
             className="text-fluid-2xl font-bold mb-4"
             style={{ fontFamily: "var(--font-cormorant), serif", color: 'var(--gris)' }}
-          >
-            Cada momento merece su historia
-          </h2>
+          />
           <p className="text-lg max-w-2xl mx-auto" style={{ color: 'var(--gris-claro)' }}>
             Descubre nuestras sesiones fotográficas diseñadas para capturar la esencia de cada etapa especial de tu vida
           </p>
-        </div>
+        </Reveal>
 
         {/* Sessions Grid - Bento Style */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -46,19 +48,21 @@ export function SessionsGrid() {
             const isLarge = index === 0 || index === 3;
 
             return (
-              <div
+              <Reveal
                 key={session.slug}
-                className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 ${
-                  isLarge ? 'col-span-2 row-span-2' : ''
-                }`}
+                delay={index * 60}
+                className={isLarge ? 'col-span-2 row-span-2' : undefined}
               >
-                {/* Image + Link to session page */}
-                <Link
-                  href={`/sesiones/${session.slug}`}
-                  className="block relative"
-                  aria-label={`Ver detalles de ${session.name}`}
+                <div
+                  className="group relative h-full overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
                 >
-                  <div className={`relative ${isLarge ? 'aspect-square' : 'aspect-square'}`}>
+                  {/* Image + Link to session page */}
+                  <Link
+                    href={`/sesiones/${session.slug}`}
+                    className="block relative"
+                    aria-label={`Ver detalles de ${session.name}`}
+                  >
+                    <div className="relative aspect-square">
                     <Image
                       src={session.image}
                       alt={session.imageAlt}
@@ -113,7 +117,8 @@ export function SessionsGrid() {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 )}
-              </div>
+                </div>
+              </Reveal>
             );
           })}
         </div>

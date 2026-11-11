@@ -517,3 +517,157 @@ a:focus-visible,
   font-size: 1.375rem;
   line-height: 1.8;
 }
+
+/* ==========================================================================
+   Visual effects (pack A + B)
+   Rules: only `transform` and `opacity` animate; the reduced-motion block at
+   the end of this section restores final states. Hidden pre-animation states
+   are scoped to `.reveal-ready`, which an inline script sets only when the
+   browser supports IntersectionObserver, so content stays visible without JS.
+   ========================================================================== */
+
+/* Scroll reveal ---------------------------------------------------------- */
+.reveal {
+  transition-property: opacity, transform;
+  transition-duration: 750ms;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-ready .reveal:not(.is-visible) {
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+}
+
+/* Hero Ken Burns --------------------------------------------------------- */
+@keyframes kenburns {
+  from {
+    transform: scale(1) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.07) translate3d(0, -1.2%, 0);
+  }
+}
+
+.animate-kenburns {
+  animation: kenburns 8s ease-out both;
+}
+
+/* Word-by-word heading reveal ------------------------------------------- */
+@keyframes word-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 0.35em, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.word-reveal > span {
+  display: inline-block;
+  margin-right: 0.24em;
+}
+
+.word-reveal > span:last-child {
+  margin-right: 0;
+}
+
+.reveal-ready .word-reveal > span {
+  opacity: 0;
+}
+
+.reveal-ready .word-reveal.is-playing > span {
+  animation: word-in 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Lightbox entrance ----------------------------------------------------- */
+@keyframes lightbox-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes lightbox-pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.lightbox-backdrop {
+  animation: lightbox-fade-in 250ms ease-out both;
+}
+
+.lightbox-panel {
+  animation: lightbox-pop-in 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Floating WhatsApp button --------------------------------------------- */
+@keyframes fab-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.whatsapp-fab {
+  animation: fab-in 500ms ease-out 900ms both;
+}
+
+/* Parallax background -------------------------------------------------- */
+.parallax-cta-bg {
+  transform: translate3d(0, 0, 0) scale(1.2);
+  will-change: transform;
+}
+
+/* Reduced motion ------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal {
+    transition: none;
+  }
+
+  .reveal-ready .reveal:not(.is-visible) {
+    opacity: 1;
+    transform: none;
+  }
+
+  .reveal-ready .word-reveal > span,
+  .reveal-ready .word-reveal.is-playing > span {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .animate-kenburns,
+  .lightbox-backdrop,
+  .lightbox-panel {
+    animation: none;
+  }
+
+  .whatsapp-fab {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .parallax-cta-bg {
+    transform: scale(1.2);
+  }
+}

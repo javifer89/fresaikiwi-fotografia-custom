@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -12,6 +12,16 @@ const LOGO_SRC =
 export function NavBar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [sessionsDropdownOpen, setSessionsDropdownOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // The navbar starts translucent over the hero and turns opaque once the page
+  // has scrolled, so the links stay readable over photography.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const whatsappUrl = (message?: string) =>
     `https://wa.me/34633520862?${message ? `text=${encodeURIComponent(message)}` : ""}`;
@@ -19,7 +29,14 @@ export function NavBar() {
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8"
-      style={{ backgroundColor: 'rgba(253, 248, 244, 0.3)', backdropFilter: 'blur(12px)' }}
+      style={{
+        backgroundColor: scrolled
+          ? "rgba(253, 248, 244, 0.96)"
+          : "rgba(253, 248, 244, 0.35)",
+        backdropFilter: "blur(12px)",
+        boxShadow: scrolled ? "0 10px 30px -18px rgba(61, 61, 61, 0.45)" : "none",
+        transition: "background-color 300ms ease, box-shadow 300ms ease",
+      }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
@@ -31,7 +48,9 @@ export function NavBar() {
               width={160}
               height={80}
               priority
-              className="h-20 md:h-24 w-auto -mt-1 -mb-1"
+              className={`w-auto -mt-1 -mb-1 transition-[height] duration-300 ease-out ${
+                scrolled ? "h-16 md:h-20" : "h-20 md:h-24"
+              }`}
             />
           </Link>
 

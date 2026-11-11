@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Heart, Star, Camera, Users, Gift, Music, Crown, ExternalLink } from "lucide-react";
 import { Container } from "@/components/container";
 import { SessionFilters } from "@/components/session-filters";
+import { Reveal } from "@/components/reveal";
 import { sessions } from "@/lib/data/sessions";
 
 export const metadata: Metadata = {
@@ -34,32 +35,34 @@ export default function SesionesPage() {
         <Container>
           <SessionFilters />
 
-          <h1
-            className="text-4xl md:text-5xl font-bold text-center mb-4"
-            style={{ fontFamily: "var(--font-rouge), cursive", color: "var(--gris)" }}
-          >
-            Nuestras Sesiones
-          </h1>
-          <p
-            className="text-center text-gray-600 mb-12 max-w-2xl mx-auto"
-            style={{ fontFamily: "var(--font-roboto), sans-serif" }}
-          >
-            Cada momento es único. Descubre nuestras sesiones fotográficas diseñadas para capturar la
-            esencia de tu historia.
-          </p>
+          <Reveal className="mb-12 text-center">
+            <h1
+              className="text-4xl md:text-5xl font-bold text-center mb-4"
+              style={{ fontFamily: "var(--font-rouge), cursive", color: "var(--gris)" }}
+            >
+              Nuestras Sesiones
+            </h1>
+            <p
+              className="text-center text-gray-600 max-w-2xl mx-auto"
+              style={{ fontFamily: "var(--font-roboto), sans-serif" }}
+            >
+              Cada momento es único. Descubre nuestras sesiones fotográficas diseñadas para capturar la
+              esencia de tu historia.
+            </p>
+          </Reveal>
 
           {/* Sessions Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {sessions.map((session) => {
+            {sessions.map((session, index) => {
               const IconComponent = iconComponents[session.icon];
               return (
-                <div
-                  key={session.slug}
-                  className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col"
-                >
-                  {/* The booking link lives outside the card link: nesting anchors is invalid HTML. */}
-                  <Link href={`/sesiones/${session.slug}`} className="flex flex-col flex-grow">
-                    <div className="relative h-48 overflow-hidden">
+                <Reveal key={session.slug} delay={index * 50} className="h-full">
+                  <div
+                    className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col h-full"
+                  >
+                    {/* The booking link lives outside the card link: nesting anchors is invalid HTML. */}
+                    <Link href={`/sesiones/${session.slug}`} className="flex flex-col flex-grow">
+                      <div className="relative aspect-[4/5] overflow-hidden">
                       <Image
                         src={session.image}
                         alt={session.imageAlt}
@@ -108,6 +111,7 @@ export default function SesionesPage() {
                     )}
                   </div>
                 </div>
+                </Reveal>
               );
             })}
           </div>
