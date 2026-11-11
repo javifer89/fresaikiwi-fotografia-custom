@@ -1,6 +1,7 @@
 "use client";
 
 import { FormspreeForm } from "@/components/formspree-form";
+import { Reveal } from "@/components/reveal";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const FRESA = "#E8A4A4";
@@ -15,7 +16,7 @@ export function ContactCTA() {
     <section className="py-24 px-4 md:px-8" style={{ backgroundColor: CREMA }}>
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full"
                 style={{ backgroundColor: FRESA_LIGHT, color: FRESA_DARK }}>
             ¿Listo para tu sesión?
@@ -29,12 +30,13 @@ export function ContactCTA() {
           <p className="text-lg max-w-2xl mx-auto" style={{ fontFamily: "var(--font-roboto), sans-serif", color: '#6B6B6B' }}>
             Rellene el formulario y nos pondremos en contacto con usted para planificar su sesión fotográfica perfecta
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="bg-white rounded-3xl p-8 shadow-xl">
-            <FormspreeForm
+          <Reveal>
+            <div className="bg-white rounded-3xl p-8 shadow-xl">
+              <FormspreeForm
               fields={[
                 { name: "nombre", label: "Nombre completo", type: "text", required: true },
                 { name: "email", label: "Email", type: "email", required: true },
@@ -46,10 +48,11 @@ export function ContactCTA() {
               submitText="Enviar Solicitud"
               successMessage="¡Gracias! Nos pondremos en contacto con usted en menos de 24 horas."
             />
-          </div>
+            </div>
+          </Reveal>
 
           {/* Contact Info */}
-          <div className="space-y-6">
+          <Reveal delay={80} className="space-y-6">
             {/* Info Cards */}
             <div className="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-1 transition-all">
               <div className="flex items-start gap-4">
@@ -100,7 +103,7 @@ export function ContactCTA() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

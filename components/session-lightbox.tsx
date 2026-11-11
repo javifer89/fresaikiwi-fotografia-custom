@@ -145,7 +145,7 @@ export function SessionLightbox({
       {open && (
         <div
           ref={dialogRef}
-          className="fixed inset-0 z-50 flex items-center justify-center pt-20"
+          className="lightbox-backdrop fixed inset-0 z-50 flex items-center justify-center pt-20"
           style={{ backgroundColor: "rgba(0,0,0,0.95)" }}
           onClick={closeLightbox}
           role="dialog"
@@ -166,7 +166,7 @@ export function SessionLightbox({
 
           {/* Backdrop clicks close the dialog; clicks on the content must not. */}
           <div
-            className="relative w-full max-w-full max-h-[90vh] px-4"
+            className="lightbox-panel relative w-full max-w-full max-h-[90vh] px-4"
             onClick={(event) => event.stopPropagation()}
           >
             <Image
