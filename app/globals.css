@@ -633,6 +633,17 @@ a:focus-visible,
   will-change: transform;
 }
 
+/* Contact map: warm, desaturated tint so the embed sits with the palette.
+   Not full grayscale on purpose: the red pin and green areas stay readable.
+   Only from `lg` (64rem, the Tailwind breakpoint used in the band): mobile
+   keeps the map exactly as it was. */
+@media (min-width: 64rem) {
+  .mapa-marca {
+    filter: saturate(0.55) sepia(0.15) brightness(1.04) contrast(0.96)
+      hue-rotate(-8deg);
+  }
+}
+
 /* Reduced motion ------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   html {

@@ -29,10 +29,8 @@ export default function ContactoPage() {
             Estamos aquí para ayudarte
           </p>
 
-          {/* Top Section - Info + Map side by side */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-            {/* Left: Contact Info */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+          {/* Contact info */}
+          <div className="max-w-2xl mx-auto bg-white p-8 rounded-2xl shadow-lg">
               <h3 className="text-2xl font-bold mb-6" style={{fontFamily: "var(--font-rouge), cursive", color: '#3D3D3D'}}>
                 Información de contacto
               </h3>
@@ -84,18 +82,38 @@ export default function ContactoPage() {
               </div>
             </div>
 
-            {/* Right: Map with lazy loading */}
-            <div className="bg-white p-4 rounded-2xl shadow-lg overflow-hidden lg:h-auto">
-              <LazyIframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390.26204477840867!2d-0.23027608422429072!3d38.50848851283724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd62191ee4c716fd%3A0xc21e2879ce5b91cc!2sFresaikiwi%20Fotografia!5e0!3m2!1ses!2ses!4v1709248393387!5m2!1ses!2ses"
-                height="400"
-                className="w-full rounded-2xl"
-              />
+        </Container>
+
+        {/*
+          Mapa: card con márgenes en mobile (se conserva el comportamiento
+          táctil de siempre) y banda full-bleed desde lg, sin card.
+        */}
+        <div className="mt-8 lg:mt-14">
+          <div className="px-4 lg:px-0">
+            <div className="bg-white p-4 rounded-2xl shadow-lg lg:bg-transparent lg:p-0 lg:rounded-none lg:shadow-none">
+              <div className="relative overflow-hidden rounded-2xl lg:rounded-none">
+                <LazyIframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390.26204477840867!2d-0.23027608422429072!3d38.50848851283724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd62191ee4c716fd%3A0xc21e2879ce5b91cc!2sFresaikiwi%20Fotografia!5e0!3m2!1ses!2ses!4v1709248393387!5m2!1ses!2ses"
+                  title="Ubicación de Fresaikiwi Fotografía: C/ Constitución nº20, La Vila Joiosa"
+                  heightClassName="h-[400px] lg:h-[460px]"
+                  className="mapa-marca rounded-2xl lg:rounded-none"
+                />
+
+                {/* Tinte de marca y fundido con la página. Solo desktop. */}
+                <div
+                  className="pointer-events-none absolute inset-0 hidden lg:block"
+                  style={{ backgroundColor: "var(--crema)", opacity: 0.18, mixBlendMode: "multiply" }}
+                />
+                <div className="pointer-events-none absolute inset-x-0 top-0 hidden h-16 bg-gradient-to-b from-[var(--crema)] to-transparent lg:block" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 hidden h-16 bg-gradient-to-t from-[var(--crema)] to-transparent lg:block" />
+              </div>
             </div>
           </div>
+        </div>
 
+        <Container>
           {/* Contact Form */}
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-2xl mx-auto mt-10 lg:mt-16">
             <div className="bg-white p-8 rounded-2xl shadow-lg">
               <h3 className="text-2xl font-bold text-center mb-6" style={{fontFamily: "var(--font-rouge), cursive", color: '#3D3D3D'}}>
                 Envíanos un mensaje
