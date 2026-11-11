@@ -210,6 +210,13 @@ export const sessions: readonly SessionData[] = [
     seoDescription:
       "Sesión de familia en estudio o exterior: 1,5 horas, 25 fotografías editadas y poses naturales. Villajoyosa, Alicante.",
   },
+  /*
+   * TEMPORAL: sesiones "Musical" y "Moros y Cristianos" ocultas.
+   * Su contenido todavía no está completo. Todo lo demás (navbar, bento de la
+   * home, /sesiones, filtros, sitemap y páginas de detalle) se genera a partir
+   * de este array, así que basta con descomentar estos dos objetos para
+   * volver a publicarlas.
+   *
   {
     name: "Musical",
     slug: "musical",
@@ -261,6 +268,7 @@ export const sessions: readonly SessionData[] = [
     seoDescription:
       "Sesión de Moros y Cristianos: 1,5 horas, 20 fotografías editadas y galería privada online. Villajoyosa, Alicante.",
   },
+  */
 ] as const;
 
 export type Session = (typeof sessions)[number];

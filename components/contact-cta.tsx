@@ -39,7 +39,7 @@ export function ContactCTA() {
                 { name: "nombre", label: "Nombre completo", type: "text", required: true },
                 { name: "email", label: "Email", type: "email", required: true },
                 { name: "telefono", label: "Teléfono", type: "tel", required: true },
-                { name: "tipo_sesion", label: "Tipo de sesión", type: "select", options: ["Embarazo", "Newborn", "Cumpleaños", "Comunión", "Navidad", "Familia", "Musical", "Moros y Cristianos"], required: true },
+                { name: "tipo_sesion", label: "Tipo de sesión", type: "select", options: ["Embarazo", "Newborn", "Cumpleaños", "Comunión", "Navidad", "Familia" /* TEMPORAL: "Musical", "Moros y Cristianos" */], required: true },
                 { name: "fecha_deseada", label: "Fecha deseada", type: "text" },
                 { name: "mensaje", label: "Mensaje o comentarios", type: "textarea" }
               ]}

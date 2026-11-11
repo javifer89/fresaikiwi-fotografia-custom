@@ -9,7 +9,7 @@ import { sessions } from "@/lib/data/sessions";
 export const metadata: Metadata = {
   title: "Sesiones fotográficas",
   description:
-    "Sesiones de embarazo, newborn, comunión, cumpleaños, familia, Navidad y Moros y Cristianos en Villajoyosa, Alicante. Descubre qué incluye cada una.",
+    "Sesiones de embarazo, newborn, comunión, cumpleaños, familia y Navidad en Villajoyosa, Alicante. Descubre qué incluye cada una.",
   alternates: { canonical: "/sesiones" },
 };
 
