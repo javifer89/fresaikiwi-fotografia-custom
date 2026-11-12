@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/brand-icons";
 import { sessions } from "@/lib/data/sessions";
 import { siteConfig } from "@/lib/site-config";
 
@@ -41,7 +42,7 @@ export function Footer() {
                 className="p-3 rounded-full bg-white/10 hover:bg-pink-400 transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-5 h-5" />
+                <InstagramIcon className="w-5 h-5" />
               </a>
               <a
                 href="https://www.facebook.com/fresaikiwi.fotografia.3"
@@ -50,7 +51,7 @@ export function Footer() {
                 className="p-3 rounded-full bg-white/10 hover:bg-[#E8A4A4] transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-5 h-5" />
+                <FacebookIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
