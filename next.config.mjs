@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const isDev = process.env.NODE_ENV === "development";
+
 const nextConfig = {
   // Standalone output for optimized Docker builds (~150MB vs 1.7GB)
   output: 'standalone',
@@ -73,7 +75,12 @@ const nextConfig = {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
+              // React's development build evaluates code to rebuild component
+              // callstacks, so `next dev` needs 'unsafe-eval'. Production never
+              // does, and keeps the strict policy.
+              `script-src 'self' 'unsafe-inline'${
+                isDev ? " 'unsafe-eval'" : ""
+              } https://www.googletagmanager.com https://www.google-analytics.com`,
               "style-src 'self' 'unsafe-inline'",
               // Fonts are self-hosted by next/font, so no third-party font origin.
               "font-src 'self'",

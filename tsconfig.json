@@ -22,8 +22,7 @@
       "@components/*": ["./components/*"],
       "@lib/*": ["./lib/*"]
     },
-    "target": "ES2017",
-    "baseUrl": "."
+    "target": "ES2017"
   },
   "include": [
     "next-env.d.ts",

@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Container } from "@/components/container";
 import { FormspreeForm } from "@/components/formspree-form";
 import { LazyIframe } from "@/components/lazy-iframe";
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/brand-icons";
 
 export const metadata: Metadata = {
   title: "Contacto",
@@ -71,11 +72,11 @@ export default function ContactoPage() {
                 <div className="pt-4 border-t border-gray-100">
                   <h4 className="font-semibold mb-4" style={{color: FRESA_DARK, fontFamily: "var(--font-roboto), sans-serif"}}>Síguenos</h4>
                   <div className="flex gap-4">
-                    <a href="https://www.instagram.com/fresaikiwi_fotografia/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all hover:scale-110 flex items-center justify-center" style={{color: '#E1306C'}}>
-                      <Instagram className="w-6 h-6" />
+                    <a href="https://www.instagram.com/fresaikiwi_fotografia/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all hover:scale-110 flex items-center justify-center" style={{color: '#E1306C'}}>
+                      <InstagramIcon className="w-6 h-6" />
                     </a>
-                    <a href="https://www.facebook.com/fresaikiwi.fotografia.3" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all hover:scale-110 flex items-center justify-center" style={{color: '#1877F2'}}>
-                      <Facebook className="w-6 h-6" />
+                    <a href="https://www.facebook.com/fresaikiwi.fotografia.3" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="p-3 rounded-full bg-white shadow-md hover:shadow-lg transition-all hover:scale-110 flex items-center justify-center" style={{color: '#1877F2'}}>
+                      <FacebookIcon className="w-6 h-6" />
                     </a>
                   </div>
                 </div>
