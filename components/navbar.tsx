@@ -48,9 +48,8 @@ export function NavBar() {
               width={160}
               height={80}
               priority
-              className={`w-auto -mt-1 -mb-1 transition-[height] duration-300 ease-out ${
-                scrolled ? "h-16 md:h-20" : "h-20 md:h-24"
-              }`}
+              className={`w-auto -mt-1 -mb-1 transition-[height] duration-300 ease-out ${scrolled ? "h-16 md:h-20" : "h-20 md:h-24"
+                }`}
             />
           </Link>
 
@@ -97,8 +96,11 @@ export function NavBar() {
             </div>
 
             <Link
-              href="/reservas"
+              // href="/reservas"
+              href="https://ohmyphoto.app/reservas/489/2317/fresaikiwifotografia"
               className="px-5 py-2 rounded-full text-sm font-medium transition-all hover:scale-105"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ backgroundColor: 'var(--fresa)', color: 'white' }}
             >
               {/* Reservas */} Navidad 2026
@@ -177,8 +179,11 @@ export function NavBar() {
               </div>
 
               <Link
-                href="/reservas"
+                // href="/reservas"
+                href="https://ohmyphoto.app/reservas/489/2317/fresaikiwifotografia"
                 className="py-2 px-4 rounded-lg text-sm font-medium text-center"
+                target="_blank"
+                rel="noopener noreferrer"
                 style={{ backgroundColor: 'var(--fresa)', color: 'white' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
